@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerControls : MonoBehaviour
+public class PlayerControlsManager : MonoBehaviour
 {
     [Header("Input System")]
     [SerializeField] private InputActionAsset playerControls;
@@ -14,11 +14,17 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private string climbStr;
     [SerializeField] private string crouchStr;
     [SerializeField] private string waitStr;
+    [Space]
+    [Header("Send Inputs to:")]
+    [SerializeField] private GameObject player;
 
     private InputAction moveAction;
     private InputAction climbAction;
     private InputAction crouchAction;
     private InputAction waitAction;
+
+    private PlayerAnimator animationController;
+    private PlayerMove movementController;
 
     private void Awake()
     {
@@ -45,29 +51,40 @@ public class PlayerControls : MonoBehaviour
         waitAction.Enable();
     }
 
+    private void Start()
+    {
+        animationController = player.GetComponent<PlayerAnimator>();
+        movementController = player.GetComponent<PlayerMove>();
+    }
+
     private void OnMoveUpdate(InputAction.CallbackContext context)
     {
-        
+        float movement = context.ReadValue<float>();
+        animationController.SetMovement(movement);
+        movementController.SetMovement(movement);
+        Debug.Log("Updated Movement");
     }
 
     private void OnClimbUpdate(InputAction.CallbackContext context)
     {
-
+        float climbing = context.ReadValue<float>();
+        bool isClimbing = false;
+        if (climbing == 1) isClimbing = true;
+        animationController.SetClimbing(isClimbing);
+        Debug.Log("Updated Climbing");
     }
 
     private void OnCrouchUpdate(InputAction.CallbackContext context)
     {
-
+        float crouching = context.ReadValue<float>();
+        bool isCrouching = false;
+        if (crouching == 1) isCrouching = true;
+        animationController.SetCrouching(isCrouching);
+        Debug.Log("Updated Crouching");
     }
 
     private void OnWaitUpdate(InputAction.CallbackContext context)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        float waiting = context.ReadValue<float>();
     }
 }

@@ -8,6 +8,7 @@ public class PlayerAnimator : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D body;
+    private SpriteRenderer sr;
 
     private float movement;
     private bool climbing;
@@ -17,11 +18,12 @@ public class PlayerAnimator : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        if (body.velocity.y < 0) animator.SetBool("Falling", true);
+        if (body.velocity.y < -0.2) animator.SetBool("Falling", true);
         else animator.SetBool("Falling", false);
     }
 
@@ -32,6 +34,8 @@ public class PlayerAnimator : MonoBehaviour
         if (movement != 0)
         {
             animator.SetBool("Walking", true);
+            if (movement > 0)sr.flipX = false;
+            else sr.flipX = true;
         } else
         {
             animator.SetBool("Walking", false);

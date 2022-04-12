@@ -256,12 +256,12 @@ TextureImporter:
       name: ClimbUpSheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 8
+        y: 9
+        width: 99
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -277,12 +277,12 @@ TextureImporter:
       name: ClimbUpSheet_1
       rect:
         serializedVersion: 2
-        x: 100
-        y: 0
+        x: 107
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -298,12 +298,12 @@ TextureImporter:
       name: ClimbUpSheet_2
       rect:
         serializedVersion: 2
-        x: 200
-        y: 0
-        width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 208
+        y: 9
+        width: 99
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -319,12 +319,12 @@ TextureImporter:
       name: ClimbUpSheet_3
       rect:
         serializedVersion: 2
-        x: 300
-        y: 0
+        x: 307
+        y: 8
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -340,12 +340,12 @@ TextureImporter:
       name: ClimbUpSheet_4
       rect:
         serializedVersion: 2
-        x: 400
-        y: 0
+        x: 408
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -361,12 +361,12 @@ TextureImporter:
       name: ClimbUpSheet_5
       rect:
         serializedVersion: 2
-        x: 500
-        y: 0
+        x: 508
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -382,12 +382,12 @@ TextureImporter:
       name: ClimbUpSheet_6
       rect:
         serializedVersion: 2
-        x: 600
-        y: 0
+        x: 608
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -403,12 +403,12 @@ TextureImporter:
       name: ClimbUpSheet_7
       rect:
         serializedVersion: 2
-        x: 700
-        y: 0
+        x: 708
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -424,12 +424,12 @@ TextureImporter:
       name: ClimbUpSheet_8
       rect:
         serializedVersion: 2
-        x: 800
-        y: 0
+        x: 808
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -445,12 +445,12 @@ TextureImporter:
       name: ClimbUpSheet_9
       rect:
         serializedVersion: 2
-        x: 900
-        y: 0
+        x: 908
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -466,12 +466,12 @@ TextureImporter:
       name: ClimbUpSheet_10
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 0
+        x: 1008
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -487,12 +487,12 @@ TextureImporter:
       name: ClimbUpSheet_11
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 0
+        x: 1108
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -508,12 +508,12 @@ TextureImporter:
       name: ClimbUpSheet_12
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 0
+        x: 1208
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -529,12 +529,12 @@ TextureImporter:
       name: ClimbUpSheet_13
       rect:
         serializedVersion: 2
-        x: 1300
-        y: 0
+        x: 1308
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -550,12 +550,12 @@ TextureImporter:
       name: ClimbUpSheet_14
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 0
+        x: 1408
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -571,12 +571,12 @@ TextureImporter:
       name: ClimbUpSheet_15
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 0
+        x: 1508
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -592,12 +592,12 @@ TextureImporter:
       name: ClimbUpSheet_16
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 0
+        x: 1608
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -613,12 +613,12 @@ TextureImporter:
       name: ClimbUpSheet_17
       rect:
         serializedVersion: 2
-        x: 1700
-        y: 0
+        x: 1708
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -634,12 +634,12 @@ TextureImporter:
       name: ClimbUpSheet_18
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 0
+        x: 1808
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -655,12 +655,12 @@ TextureImporter:
       name: ClimbUpSheet_19
       rect:
         serializedVersion: 2
-        x: 1900
-        y: 0
+        x: 1908
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -676,12 +676,12 @@ TextureImporter:
       name: ClimbUpSheet_20
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 0
+        x: 2008
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -697,12 +697,12 @@ TextureImporter:
       name: ClimbUpSheet_21
       rect:
         serializedVersion: 2
-        x: 2100
-        y: 0
+        x: 2108
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -718,12 +718,12 @@ TextureImporter:
       name: ClimbUpSheet_22
       rect:
         serializedVersion: 2
-        x: 2200
-        y: 0
+        x: 2208
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -739,12 +739,12 @@ TextureImporter:
       name: ClimbUpSheet_23
       rect:
         serializedVersion: 2
-        x: 2300
-        y: 0
+        x: 2308
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -760,12 +760,12 @@ TextureImporter:
       name: ClimbUpSheet_24
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 0
+        x: 2408
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -781,12 +781,12 @@ TextureImporter:
       name: ClimbUpSheet_25
       rect:
         serializedVersion: 2
-        x: 2500
-        y: 0
+        x: 2508
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -802,12 +802,12 @@ TextureImporter:
       name: ClimbUpSheet_26
       rect:
         serializedVersion: 2
-        x: 2600
-        y: 0
+        x: 2608
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -823,12 +823,12 @@ TextureImporter:
       name: ClimbUpSheet_27
       rect:
         serializedVersion: 2
-        x: 2700
-        y: 0
+        x: 2708
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -844,12 +844,12 @@ TextureImporter:
       name: ClimbUpSheet_28
       rect:
         serializedVersion: 2
-        x: 2800
-        y: 0
+        x: 2808
+        y: 9
         width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 191
+      alignment: 9
+      pivot: {x: 0.175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -857,27 +857,6 @@ TextureImporter:
       bones: []
       spriteID: e7db4b81c1aedae40800000000000000
       internalID: 5669444912323804542
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ClimbUpSheet_29
-      rect:
-        serializedVersion: 2
-        x: 2900
-        y: 0
-        width: 100
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 244ea824c0eae4ed0800000000000000
-      internalID: -2427811781426879422
       vertices: []
       indices: 
       edges: []

@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerAnimator : MonoBehaviour
 {
+    [SerializeField] private Transform climbingLocation;
+
     private Animator animator;
     private Rigidbody2D body;
     private SpriteRenderer sr;
@@ -14,11 +16,15 @@ public class PlayerAnimator : MonoBehaviour
     private bool climbing;
     private bool crouching;
 
+    private float climbLocationX;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+
+        climbLocationX = climbingLocation.position.x;
     }
 
     private void Update()
@@ -34,8 +40,16 @@ public class PlayerAnimator : MonoBehaviour
         if (movement != 0)
         {
             animator.SetBool("Walking", true);
-            if (movement > 0)sr.flipX = false;
-            else sr.flipX = true;
+            if (movement > 0)
+            {
+                sr.flipX = false;
+                climbingLocation.localPosition = new Vector3(0.4f, climbingLocation.localPosition.y, 0f);
+            }
+            else
+            {
+                sr.flipX = true;
+                climbingLocation.localPosition = new Vector3(-0.4f, climbingLocation.localPosition.y, 0f);
+            }
         } else
         {
             animator.SetBool("Walking", false);
@@ -46,7 +60,9 @@ public class PlayerAnimator : MonoBehaviour
     {
         this.climbing = climbing;
 
-        animator.SetBool("Climbing", climbing);
+        if (climbingLocation.gameObject.GetComponent<LedgeDetection>().GetCanClimb() && this.climbing)
+            animator.SetBool("Climbing", true);
+        else animator.SetBool("Climbing", false);
     }
 
     public void SetCrouching(bool crouching)

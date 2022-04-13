@@ -7,17 +7,23 @@ public class PulleyManager : MonoBehaviour
     [SerializeField] private GameObject firstPlatform;
     [SerializeField] private GameObject secondPlatform;
 
+    private Rigidbody2D firstBody;
+    private Rigidbody2D secondBody;
+
     private float initialGravity;
     private float prevFirstHeight;
     private float prevSecondHeight;
     private float firstHeight;
     private float secondHeight;
 
+    private bool firstTop;
+    private bool secondTop;
+
     // Start is called before the first frame update
     void Start()
     {
-        Rigidbody2D firstBody = firstPlatform.GetComponent<Rigidbody2D>();
-        Rigidbody2D secondBody = secondPlatform.GetComponent<Rigidbody2D>();
+        firstBody = firstPlatform.GetComponent<Rigidbody2D>();
+        secondBody = secondPlatform.GetComponent<Rigidbody2D>();
         firstBody.gravityScale = 0;
         secondBody.gravityScale = 0;
         firstBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -33,6 +39,14 @@ public class PulleyManager : MonoBehaviour
     {
         firstHeight = firstPlatform.transform.position.y;
         secondHeight = secondPlatform.transform.position.y;
+        firstTop = getTopStatus(firstPlatform);
+        secondTop = getTopStatus(secondPlatform);
+        if (firstTop) secondBody.constraints = RigidbodyConstraints2D.FreezePosition;
+            else secondBody.constraints = RigidbodyConstraints2D.FreezePositionX;
+        if (secondTop) firstBody.constraints = RigidbodyConstraints2D.FreezePosition;
+            else firstBody.constraints = RigidbodyConstraints2D.FreezePositionX;
+        firstBody.freezeRotation = true;
+        secondBody.freezeRotation = true;
         if (firstHeight != prevFirstHeight)
         {
             UpdatePlatform(firstPlatform, firstHeight - prevFirstHeight, secondPlatform);
@@ -47,6 +61,11 @@ public class PulleyManager : MonoBehaviour
         }
         prevFirstHeight = firstHeight;
         prevSecondHeight = secondHeight;
+    }
+
+    private bool getTopStatus(GameObject platform)
+    {
+        return platform.GetComponent<CollisionDetection>().GetCollision();
     }
 
     private void UpdatePlatform(GameObject platformCheck, float heightChange, GameObject platformMove)

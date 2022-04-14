@@ -1413,27 +1413,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1582859106 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1401728404941618239, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
-  m_PrefabInstance: {fileID: 1401728405218783932}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1582859107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582859106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f7f34a20f693f24f86c9c4cb20dab3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 2
-  stoneStatue: {fileID: 575574107481565364, guid: 3e914eae8934cd448a8aaefe18de3011, type: 3}
-  player: {fileID: 611551894}
-  numRespawns: 0
 --- !u!1 &1633320470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,6 +1652,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1582859107, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 611551894}
     - target: {fileID: 1401728404941618232, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: player
       value: 
@@ -1683,11 +1666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1401728404941618233, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2319195
+      value: 8.38
       objectReference: {fileID: 0}
     - target: {fileID: 1401728404941618233, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5215182
+      value: -3.52
       objectReference: {fileID: 0}
     - target: {fileID: 1401728404941618233, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1722,10 +1705,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
-      propertyPath: magnitude
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: firstPulley
       value: 
       objectReference: {fileID: 465417986}
@@ -1744,6 +1723,14 @@ PrefabInstance:
     - target: {fileID: 1401728404941618239, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: m_Name
       value: Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290942546255855929, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: nextScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290942546255855929, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: levelWaitTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dc034913444a28429885b544d6c16f6, type: 3}

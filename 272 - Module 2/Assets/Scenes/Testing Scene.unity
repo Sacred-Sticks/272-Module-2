@@ -1724,14 +1724,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 8290942546255855929, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
-      propertyPath: nextScene
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8290942546255855929, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
-      propertyPath: levelWaitTime
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
 --- !u!1001 &1948868940141051363
@@ -1843,10 +1835,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5365588676295478964, guid: ff61d255cae19484dacca3295f1fbf61, type: 3}
-      propertyPath: vertexes.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5365588676295478964, guid: ff61d255cae19484dacca3295f1fbf61, type: 3}
       propertyPath: vertexes.Array.data[0]
       value: 
       objectReference: {fileID: 490286925}
@@ -1862,18 +1850,6 @@ PrefabInstance:
       propertyPath: vertexes.Array.data[3]
       value: 
       objectReference: {fileID: 70294896}
-    - target: {fileID: 5365588676295478965, guid: ff61d255cae19484dacca3295f1fbf61, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5365588676295478965, guid: ff61d255cae19484dacca3295f1fbf61, type: 3}
-      propertyPath: m_Parameters.alignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5365588676295478965, guid: ff61d255cae19484dacca3295f1fbf61, type: 3}
-      propertyPath: m_Parameters.textureMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5365588676295478967, guid: ff61d255cae19484dacca3295f1fbf61, type: 3}
       propertyPath: m_Name
       value: RopeRender

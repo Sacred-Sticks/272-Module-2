@@ -127,5 +127,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c74c55857097d44cbd4218bee50cf37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelWaitTime: 0
-  nextScene: 0
+  levelWaitTime: 2
+  nextScene: 1

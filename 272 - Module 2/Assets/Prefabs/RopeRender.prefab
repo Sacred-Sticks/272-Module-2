@@ -142,4 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f67f1a363fc32459e2c25a3d5ff5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vertexes: []
+  vertexes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

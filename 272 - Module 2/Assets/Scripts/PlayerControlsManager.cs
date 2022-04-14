@@ -71,7 +71,7 @@ public class PlayerControlsManager : MonoBehaviour
         bool isClimbing = false;
         if (climbing == 1) isClimbing = true;
         animationController.SetClimbing(isClimbing);
-        Debug.Log("Updated Climbing");
+        //Debug.Log("Updated Climbing");
     }
 
     private void OnCrouchUpdate(InputAction.CallbackContext context)
@@ -80,7 +80,7 @@ public class PlayerControlsManager : MonoBehaviour
         bool isCrouching = false;
         if (crouching == 1) isCrouching = true;
         animationController.SetCrouching(isCrouching);
-        Debug.Log("Updated Crouching");
+        //Debug.Log("Updated Crouching");
     }
 
     private void OnWaitUpdate(InputAction.CallbackContext context)

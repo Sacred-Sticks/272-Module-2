@@ -137,8 +137,8 @@ GameObject:
   - component: {fileID: 70294898}
   - component: {fileID: 70294899}
   - component: {fileID: 70294900}
-  m_Layer: 0
-  m_Name: Platform (1)
+  m_Layer: 3
+  m_Name: Right Platform
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70294894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.31, y: 0.21, z: 0}
+  m_LocalPosition: {x: 4.85, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -221,7 +221,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -269,7 +269,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1}
+  m_Offset: {x: 0, y: 0.0001}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 465417988}
   - component: {fileID: 465417987}
   m_Layer: 0
-  m_Name: pulley
+  m_Name: Left Pulley
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,8 +431,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1445405605
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3ca984442eb04f748b22b829bfa73aeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -453,7 +453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465417986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 3.035406, z: 0}
+  m_LocalPosition: {x: -4.79, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -473,8 +473,8 @@ GameObject:
   - component: {fileID: 490286926}
   - component: {fileID: 490286922}
   - component: {fileID: 490286927}
-  m_Layer: 0
-  m_Name: Platform
+  m_Layer: 3
+  m_Name: Left Platform
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,7 +493,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1}
+  m_Offset: {x: 0, y: 0.0001}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -518,7 +518,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -586,7 +586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490286921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: -1.5, z: 0}
+  m_LocalPosition: {x: -4.79, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -635,24 +635,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1948868939666012013, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
   m_PrefabInstance: {fileID: 1948868940141051363}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &611551893 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1948868939666012018, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
-  m_PrefabInstance: {fileID: 1948868940141051363}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &611551894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611551886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4d974322658e3245bfa7598c9050087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goTo: {fileID: 1345339069}
 --- !u!1 &991102303
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +646,7 @@ GameObject:
   - component: {fileID: 991102305}
   - component: {fileID: 991102304}
   m_Layer: 0
-  m_Name: pulley (1)
+  m_Name: Right Pulley
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,8 +689,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1445405605
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3ca984442eb04f748b22b829bfa73aeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -729,7 +711,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991102303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.31, y: 3.035406, z: 0}
+  m_LocalPosition: {x: 4.85, y: 3.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -857,7 +839,7 @@ GameObject:
   - component: {fileID: 1030147874}
   - component: {fileID: 1030147873}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Boulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -891,7 +873,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -959,73 +941,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030147872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.52, y: -0.07, z: 0}
+  m_LocalPosition: {x: 1.96, y: -3.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1345339068
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1345339069}
-  - component: {fileID: 1345339071}
-  - component: {fileID: 1345339070}
-  m_Layer: 0
-  m_Name: Climb GoalPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1345339069
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345339068}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 611551893}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1345339070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345339068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5d0da2ccfc66344499545af73598fa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floorTag: Floor
---- !u!58 &1345339071
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345339068}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.01
 --- !u!1 &1633320470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1205,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: magnitude
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: firstPulley
+      value: 
+      objectReference: {fileID: 465417986}
+    - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: secondPulley
+      value: 
+      objectReference: {fileID: 991102303}
+    - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: firstPlatform
       value: 
       objectReference: {fileID: 490286921}
@@ -1308,21 +1241,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: OldMan
       objectReference: {fileID: 0}
-    - target: {fileID: 1948868939666012017, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
-      propertyPath: climbingLocation
-      value: 
-      objectReference: {fileID: 1345339069}
     - target: {fileID: 1948868939666012018, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1948868939666012018, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.801
+      value: -4.71
       objectReference: {fileID: 0}
     - target: {fileID: 1948868939666012018, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1948868939666012018, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
       propertyPath: m_LocalPosition.z

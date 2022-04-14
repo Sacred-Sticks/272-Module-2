@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour
 {
     [SerializeField] private Transform climbingLocation;
+    [SerializeField] private float fallingSpeed;
 
     private Animator animator;
     private Rigidbody2D body;
@@ -29,7 +30,7 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        if (body.velocity.y < -0.2) animator.SetBool("Falling", true);
+        if (body.velocity.y < -fallingSpeed) animator.SetBool("Falling", true);
         else animator.SetBool("Falling", false);
     }
 

@@ -65,3 +65,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlatform: {fileID: 0}
   secondPlatform: {fileID: 0}
+  firstPulley: {fileID: 0}
+  secondPulley: {fileID: 0}
+  magnitude: 3
+  multiplier: 0.5
+  first: 0
+  second: 0

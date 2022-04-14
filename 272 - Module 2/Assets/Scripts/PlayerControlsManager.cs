@@ -62,7 +62,7 @@ public class PlayerControlsManager : MonoBehaviour
         float movement = context.ReadValue<float>();
         animationController.SetMovement(movement);
         movementController.SetMovement(movement);
-        Debug.Log("Updated Movement");
+        //Debug.Log("Updated Movement");
     }
 
     private void OnClimbUpdate(InputAction.CallbackContext context)

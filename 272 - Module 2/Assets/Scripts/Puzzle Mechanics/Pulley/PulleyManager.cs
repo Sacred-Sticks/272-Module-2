@@ -22,6 +22,8 @@ public class PulleyManager : MonoBehaviour
     private Rigidbody2D firstPlatformCollision;
     private Rigidbody2D secondPlatformCollision;
 
+    [SerializeField] private bool pulleyLock;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,43 +38,67 @@ public class PulleyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Get Connected Rigidbody
         firstPlatformCollision = firstPlatform.GetComponent<CollisionDetection>().GetConnectedBody();
         secondPlatformCollision = secondPlatform.GetComponent<CollisionDetection>().GetConnectedBody();
-        float firstMass = 0;
-        float secondMass = 0;
-        if (firstPlatformCollision != null)
-            firstMass = firstPlatformCollision.mass;
-        if (secondPlatformCollision != null)
-            secondMass = secondPlatformCollision.mass;
 
-        float massDiff = firstMass - secondMass;
-
-        first = false;
-        second = false;
-
-        if (firstPulley.transform.position.y - firstPlatform.transform.position.y > magnitude)
-            first = true;
-        if (secondPulley.transform.position.y - secondPlatform.transform.position.y > magnitude)
-            second = true;
-
-        if (first && second)
+        if (!pulleyLock)
         {
-            secondPlatformBody.velocity = new Vector2(0, massDiff * multiplier);
-        }
-        else if (first)
-        {
-            secondPlatformBody.velocity = new Vector2(0, -secondMass * multiplier);
-        }
-        else if (second)
-        {
-            secondPlatformBody.velocity = new Vector2(0, firstMass * multiplier);
-        }
-        else
+            // Set Masses
+            float firstMass = 0;
+            float secondMass = 0;
+            if (firstPlatformCollision != null)
+                firstMass = firstPlatformCollision.mass;
+            if (secondPlatformCollision != null)
+                secondMass = secondPlatformCollision.mass;
+
+            float massDiff = firstMass - secondMass;
+
+            // Check if both sides are able to move upward
+            first = false;
+            second = false;
+            if (firstPulley.transform.position.y - firstPlatform.transform.position.y > magnitude)
+                first = true;
+            if (secondPulley.transform.position.y - secondPlatform.transform.position.y > magnitude)
+                second = true;
+
+            // Assign Movement to Second platform according to which platform can move
+            if (first && second)
+            {
+                secondPlatformBody.velocity = new Vector2(0, massDiff * multiplier);
+            }
+            else if (first && !second)
+            {
+                secondPlatformBody.velocity = new Vector2(0, -secondMass * multiplier);
+            }
+            else if (second && !first)
+            {
+                secondPlatformBody.velocity = new Vector2(0, firstMass * multiplier);
+            }
+            else
+            {
+                secondPlatformBody.velocity = Vector2.zero;
+            }
+            if (secondPlatformCollision != null) secondPlatformCollision.velocity = new Vector2(secondPlatformCollision.velocity.x, secondPlatformBody.velocity.y);
+            firstPlatformBody.velocity = -secondPlatformBody.velocity;
+            if (firstPlatformCollision != null) firstPlatformCollision.velocity = new Vector2(firstPlatformCollision.velocity.x, firstPlatformBody.velocity.y);
+
+        } else
         {
             secondPlatformBody.velocity = Vector2.zero;
+            if (secondPlatformCollision != null) {
+                secondPlatformCollision.velocity = new Vector2(secondPlatformCollision.velocity.x, 0); 
+            }
+            firstPlatformBody.velocity = Vector2.zero;
+            if (firstPlatformCollision != null)
+            {
+                firstPlatformCollision.velocity = new Vector2 (firstPlatformCollision.velocity.x, 0);
+            }
         }
-        if (secondPlatformCollision != null) secondPlatformCollision.velocity = new Vector2(secondPlatformCollision.velocity.x, secondPlatformBody.velocity.y);
-        firstPlatformBody.velocity = -secondPlatformBody.velocity;
-        if (firstPlatformCollision != null) firstPlatformCollision.velocity = new Vector2(firstPlatformCollision.velocity.x, firstPlatformBody.velocity.y);
+    }
+
+    public void SetPulleyLock(bool pulleyLock)
+    {
+        this.pulleyLock = pulleyLock;
     }
 }

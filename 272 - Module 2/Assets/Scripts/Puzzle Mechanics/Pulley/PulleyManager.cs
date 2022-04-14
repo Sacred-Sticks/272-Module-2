@@ -22,7 +22,7 @@ public class PulleyManager : MonoBehaviour
     private Rigidbody2D firstPlatformCollision;
     private Rigidbody2D secondPlatformCollision;
 
-    [SerializeField] private bool pulleyLock;
+    private bool pulleyLock;
 
     // Start is called before the first frame update
     void Start()

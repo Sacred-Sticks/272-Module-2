@@ -137,9 +137,9 @@ GameObject:
   - component: {fileID: 70294898}
   - component: {fileID: 70294899}
   - component: {fileID: 70294900}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Right Platform
-  m_TagString: Floor
+  m_TagString: Pulley Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -667,9 +667,9 @@ GameObject:
   - component: {fileID: 490286926}
   - component: {fileID: 490286922}
   - component: {fileID: 490286927}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Left Platform
-  m_TagString: Floor
+  m_TagString: Pulley Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1547,9 +1547,9 @@ GameObject:
   - component: {fileID: 1821845699}
   - component: {fileID: 1821845698}
   - component: {fileID: 1821845697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

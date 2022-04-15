@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class LedgeDetection : MonoBehaviour
 {
-    [SerializeField] private LayerMask floorLayer;
+    [SerializeField] private int floorLayer;
 
     private bool canClimb;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == floorLayer)
+        if (collision.gameObject.layer == 6)
         {
             canClimb = true;
         }

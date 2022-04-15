@@ -19,6 +19,7 @@ public class Button : MonoBehaviour
     {
         originalPosition = transform.position;
         buttonActive = false;
+        buttonReleased.Invoke();
     }
 
     void Update()
@@ -37,6 +38,7 @@ public class Button : MonoBehaviour
             transform.position = originalPosition - transform.up * heightModifier;
             connectedBody.gameObject.transform.parent = null;
             buttonPressed.Invoke();
+            connectedBody.gravityScale = 1;
         }
     }
 }

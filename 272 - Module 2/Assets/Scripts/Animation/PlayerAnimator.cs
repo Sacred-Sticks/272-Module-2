@@ -6,8 +6,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerAnimator : MonoBehaviour
 {
-    [SerializeField] private Transform climbingLocation;
+    [SerializeField] private Transform climbCheck;
+    [SerializeField] private Transform climbGoal;
     [SerializeField] private float fallingSpeed;
+
+    private PlayerMove playerMove;
 
     private Animator animator;
     private Rigidbody2D body;
@@ -17,7 +20,10 @@ public class PlayerAnimator : MonoBehaviour
     private bool climbing;
     private bool crouching;
 
-    private float climbLocationX;
+    private float climbCheckX;
+    private float climbGoalX;
+
+    private bool canTurn;
 
     private void Start()
     {
@@ -25,7 +31,12 @@ public class PlayerAnimator : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
 
-        climbLocationX = climbingLocation.position.x;
+        climbCheckX = climbCheck.localPosition.x;
+        climbGoalX = climbGoal.localPosition.x;
+
+        playerMove = GetComponent<PlayerMove>();
+
+        canTurn = true;
     }
 
     private void Update()
@@ -41,15 +52,21 @@ public class PlayerAnimator : MonoBehaviour
         if (movement != 0)
         {
             animator.SetBool("Walking", true);
-            if (movement > 0)
+            if (canTurn)
             {
-                sr.flipX = false;
-                climbingLocation.localPosition = new Vector3(0.4f, climbingLocation.localPosition.y, 0f);
-            }
-            else
-            {
-                sr.flipX = true;
-                climbingLocation.localPosition = new Vector3(-0.4f, climbingLocation.localPosition.y, 0f);
+                if (movement > 0)
+                {
+                    sr.flipX = false;
+                    climbCheck.localPosition = new Vector3(climbCheckX, climbCheck.localPosition.y, 0f);
+                    climbGoal.localPosition = new Vector3(climbGoalX, climbGoal.localPosition.y, 0f);
+                }
+                else
+                {
+                    sr.flipX = true;
+                    climbCheck.localPosition = new Vector3(-climbCheckX, climbCheck.localPosition.y, 0f);
+                    climbGoal.localPosition = new Vector3(-climbGoalX, climbGoal.localPosition.y, 0f);
+                    climbGoal.localPosition = new Vector3(-climbGoalX, climbGoal.localPosition.y, 0f);
+                }
             }
         } else
         {
@@ -61,8 +78,12 @@ public class PlayerAnimator : MonoBehaviour
     {
         this.climbing = climbing;
 
-        if (climbingLocation.gameObject.GetComponent<LedgeDetection>().GetCanClimb() && this.climbing)
+        if (climbCheck.gameObject.GetComponent<LedgeDetection>().GetCanClimb() && this.climbing)
+        {
             animator.SetBool("Climbing", true);
+            playerMove.SetCanMove(false);
+            canTurn = false;
+        }
         else animator.SetBool("Climbing", false);
     }
 
@@ -71,5 +92,15 @@ public class PlayerAnimator : MonoBehaviour
         this.crouching = crouching;
 
         animator.SetBool("Crouching", crouching);
+    }
+
+    public void SetCanTurn(bool canTurn)
+    {
+        this.canTurn = canTurn;
+    }
+
+    public void ResetTurn()
+    {
+        SetMovement(movement);
     }
 }

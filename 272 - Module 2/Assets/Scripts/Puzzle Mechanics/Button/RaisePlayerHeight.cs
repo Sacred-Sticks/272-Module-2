@@ -8,7 +8,7 @@ public class RaisePlayerHeight : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.GetComponent<Rigidbody2D>() != null)
         {
             collision.gameObject.transform.position += yPositionBoost;
         }

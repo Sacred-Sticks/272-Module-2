@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pulley Platform
+  - Button
   layers:
   - Default
   - TransparentFX

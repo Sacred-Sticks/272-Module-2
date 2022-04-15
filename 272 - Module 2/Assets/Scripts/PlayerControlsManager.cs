@@ -37,7 +37,7 @@ public class PlayerControlsManager : MonoBehaviour
 
         climbAction = actionMap.FindAction(climbStr);
         climbAction.performed += OnClimbUpdate;
-        climbAction.canceled += OnClimbUpdate;
+        //climbAction.canceled += OnClimbUpdate;
         climbAction.Enable();
 
         crouchAction = actionMap.FindAction(crouchStr);

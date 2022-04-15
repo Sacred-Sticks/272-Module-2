@@ -30,6 +30,18 @@ public class CollisionDetection : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (connectedBody != null)
+        {
+            if (collision.gameObject.GetComponent<Rigidbody2D>() == connectedBody)
+            {
+                connectedBody.gravityScale = initialGravityScale;
+                connectedBody = null;
+            }
+        }
+    }
+
     public Rigidbody2D GetConnectedBody()
     {
         return connectedBody;

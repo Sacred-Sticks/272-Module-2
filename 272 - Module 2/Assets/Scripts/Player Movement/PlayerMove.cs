@@ -10,21 +10,32 @@ public class PlayerMove : MonoBehaviour
 
     private float movement;
 
+    private bool canMove;
+
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        canMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 movementVector = new Vector2(movement, body.velocity.y);
-        body.velocity = movementVector;
+        if (canMove)
+        {
+            Vector2 movementVector = new Vector2(movement, body.velocity.y);
+            body.velocity = movementVector;
+        }
     }
 
     public void SetMovement(float movement)
     {
         this.movement = movement * movementSpeed;
+    }
+
+    public void SetCanMove(bool canMove)
+    {
+        this.canMove = canMove;
     }
 }

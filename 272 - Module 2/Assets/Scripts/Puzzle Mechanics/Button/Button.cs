@@ -27,13 +27,11 @@ public class Button : MonoBehaviour
 
         if (connectedBody == null && buttonActive)
         {
-            Debug.Log("Button Not Pressed");
             transform.position = originalPosition;
             buttonReleased.Invoke();
             buttonActive = false;
         } else if (connectedBody != null && !buttonActive)
         {
-            Debug.Log("Button Pressed");
             buttonActive = true;
             connectedBody.gameObject.transform.parent = transform;
             transform.position = originalPosition - transform.up * heightModifier;

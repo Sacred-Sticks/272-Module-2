@@ -98,7 +98,6 @@ MonoBehaviour:
   secondPulley: {fileID: 0}
   magnitude: 2
   multiplier: 0.5
-  pulleyLock: 0
 --- !u!114 &1582859107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7f34a20f693f24f86c9c4cb20dab3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 2
+  waitTime: 5
   stoneStatue: {fileID: 575574107481565364, guid: 3e914eae8934cd448a8aaefe18de3011, type: 3}
   player: {fileID: 0}
   numRespawns: 0

@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 146076922}
   - component: {fileID: 146076921}
   - component: {fileID: 146076920}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 302799732}
   - component: {fileID: 302799731}
   - component: {fileID: 302799733}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stonefloor-export-exportBLUR (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 345670257}
   - component: {fileID: 345670256}
   - component: {fileID: 345670258}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stonefloor-export-exportBLUR (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -867,7 +867,7 @@ GameObject:
   - component: {fileID: 417698594}
   - component: {fileID: 417698593}
   - component: {fileID: 417698592}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Left Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,7 +976,7 @@ GameObject:
   - component: {fileID: 432818887}
   - component: {fileID: 432818886}
   - component: {fileID: 432818888}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stonefloor-export-exportBLUR (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1085,7 +1085,7 @@ GameObject:
   - component: {fileID: 473534361}
   - component: {fileID: 473534360}
   - component: {fileID: 473534359}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Right Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1285,7 +1285,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3184973927918357522, guid: b3e65573ebcf7754680cefc80197a71c, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3184973927918357522, guid: b3e65573ebcf7754680cefc80197a71c, type: 3}
       propertyPath: m_LocalScale.x
@@ -1370,7 +1370,7 @@ PrefabInstance:
     - target: {fileID: 3184973929179674013, guid: b3e65573ebcf7754680cefc80197a71c, type: 3}
       propertyPath: buttonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2014616423}
+      objectReference: {fileID: 0}
     - target: {fileID: 3184973929179674013, guid: b3e65573ebcf7754680cefc80197a71c, type: 3}
       propertyPath: buttonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1378,7 +1378,7 @@ PrefabInstance:
     - target: {fileID: 3184973929179674013, guid: b3e65573ebcf7754680cefc80197a71c, type: 3}
       propertyPath: buttonReleased.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2014616423}
+      objectReference: {fileID: 0}
     - target: {fileID: 3184973929179674013, guid: b3e65573ebcf7754680cefc80197a71c, type: 3}
       propertyPath: buttonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1655,7 +1655,7 @@ GameObject:
   - component: {fileID: 1030566232}
   - component: {fileID: 1030566231}
   - component: {fileID: 1030566233}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stonefloor-export-exportBLUR (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1764,7 +1764,7 @@ GameObject:
   - component: {fileID: 1181096207}
   - component: {fileID: 1181096206}
   - component: {fileID: 1181096208}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stonefloor-export-exportBLUR (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1903,7 +1903,7 @@ GameObject:
   - component: {fileID: 1228111344}
   - component: {fileID: 1228111343}
   - component: {fileID: 1228111345}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stonefloor-export-exportBLUR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2012,7 +2012,7 @@ GameObject:
   - component: {fileID: 1352665099}
   - component: {fileID: 1352665098}
   - component: {fileID: 1352665100}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stonefloor-export-exportBLUR (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2110,11 +2110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
---- !u!4 &1382801541 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6314430130168515380, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-  m_PrefabInstance: {fileID: 1612612058}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1428520021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2437,7 +2432,7 @@ GameObject:
   - component: {fileID: 1590695982}
   - component: {fileID: 1590695981}
   - component: {fileID: 1590695983}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stonefloor-export-exportBLUR (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2535,111 +2530,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
---- !u!1001 &1612612058
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6314430130168515380, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430130168515381, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_TagString
-      value: Piston
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430130168515382, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430130168515382, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430130168515382, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1445405605
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623506, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623506, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623506, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623506, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623506, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.9307402
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623506, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623506, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623506, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623506, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623506, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623506, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623506, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623507, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_Name
-      value: Piston (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623507, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623507, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: m_TagString
-      value: Piston
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623509, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 1382801541}
-    - target: {fileID: 6314430132026623509, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: moveRight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623509, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: pistonSize
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314430132026623509, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-      propertyPath: pistonActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
 --- !u!1001 &1641408386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2726,7 +2616,7 @@ PrefabInstance:
     - target: {fileID: 3184973929179674013, guid: b3e65573ebcf7754680cefc80197a71c, type: 3}
       propertyPath: buttonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2014616423}
+      objectReference: {fileID: 0}
     - target: {fileID: 3184973929179674013, guid: b3e65573ebcf7754680cefc80197a71c, type: 3}
       propertyPath: buttonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2734,7 +2624,7 @@ PrefabInstance:
     - target: {fileID: 3184973929179674013, guid: b3e65573ebcf7754680cefc80197a71c, type: 3}
       propertyPath: buttonReleased.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2014616423}
+      objectReference: {fileID: 0}
     - target: {fileID: 3184973929179674013, guid: b3e65573ebcf7754680cefc80197a71c, type: 3}
       propertyPath: buttonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -2792,7 +2682,7 @@ GameObject:
   - component: {fileID: 1665750317}
   - component: {fileID: 1665750316}
   - component: {fileID: 1665750315}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3262,7 +3152,7 @@ GameObject:
   - component: {fileID: 1847665790}
   - component: {fileID: 1847665789}
   - component: {fileID: 1847665791}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: stonefloor-export-exportBLUR (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3606,17 +3496,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff61d255cae19484dacca3295f1fbf61, type: 3}
---- !u!114 &2014616423 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6314430132026623509, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
-  m_PrefabInstance: {fileID: 1612612058}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8071f3d48c92dee4aaa2b20120040911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2108730826
 GameObject:
   m_ObjectHideFlags: 0

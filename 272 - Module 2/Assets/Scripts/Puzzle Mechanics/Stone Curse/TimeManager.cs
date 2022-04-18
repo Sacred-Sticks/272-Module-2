@@ -22,7 +22,8 @@ public class TimeManager : MonoBehaviour
     {
         canStartTimer = false;
         yield return new WaitForSeconds(waitTime);
-        Instantiate(stoneStatue, player.position, player.rotation);
+        GameObject statue = Instantiate(stoneStatue, player.position, player.rotation);
+        statue.GetComponent<SpriteRenderer>().flipX = player.GetComponent<SpriteRenderer>().flipX;
         canStartTimer = true;
         numRespawns--;
     }

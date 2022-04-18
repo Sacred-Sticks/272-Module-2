@@ -24,7 +24,7 @@ public class CollisionDetection : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<Rigidbody2D>() == connectedBody)
             {
-                connectedBody.gravityScale = initialGravityScale;
+                connectedBody.gravityScale = 1;
                 connectedBody = null;
             }
         }

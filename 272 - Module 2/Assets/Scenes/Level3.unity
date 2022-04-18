@@ -512,7 +512,7 @@ PrefabInstance:
     - target: {fileID: 5365588676295478964, guid: ff61d255cae19484dacca3295f1fbf61, type: 3}
       propertyPath: vertexes.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 835241082}
     - target: {fileID: 5365588676295478964, guid: ff61d255cae19484dacca3295f1fbf61, type: 3}
       propertyPath: vertexes.Array.data[2]
       value: 
@@ -2990,7 +2990,7 @@ PrefabInstance:
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: firstPulley
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 835241080}
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: secondPulley
       value: 
@@ -3116,7 +3116,7 @@ PrefabInstance:
     - target: {fileID: 5365588676295478964, guid: ff61d255cae19484dacca3295f1fbf61, type: 3}
       propertyPath: vertexes.Array.data[1]
       value: 
-      objectReference: {fileID: 890668114}
+      objectReference: {fileID: 1299972958}
     - target: {fileID: 5365588676295478964, guid: ff61d255cae19484dacca3295f1fbf61, type: 3}
       propertyPath: vertexes.Array.data[2]
       value: 

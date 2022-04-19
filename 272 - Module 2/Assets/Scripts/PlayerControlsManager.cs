@@ -14,6 +14,7 @@ public class PlayerControlsManager : MonoBehaviour
     [SerializeField] private string climbStr;
     [SerializeField] private string crouchStr;
     [SerializeField] private string waitStr;
+    [SerializeField] private string pauseStr;
     [Space]
     [Header("Send Inputs to:")]
     [SerializeField] private GameObject player;
@@ -22,9 +23,11 @@ public class PlayerControlsManager : MonoBehaviour
     private InputAction climbAction;
     private InputAction crouchAction;
     private InputAction waitAction;
+    private InputAction pauseAction;
 
     private PlayerAnimator animationController;
     private PlayerMove movementController;
+    private OpenMenu openMenu;
 
     private void Awake()
     {
@@ -49,12 +52,17 @@ public class PlayerControlsManager : MonoBehaviour
         waitAction.performed += OnWaitUpdate;
         waitAction.canceled += OnWaitUpdate;
         waitAction.Enable();
+
+        pauseAction = actionMap.FindAction(pauseStr);
+        pauseAction.performed += OnPauseUpdate;
+        pauseAction.Enable();
     }
 
     private void Start()
     {
         animationController = player.GetComponent<PlayerAnimator>();
         movementController = player.GetComponent<PlayerMove>();
+        openMenu = GetComponent<OpenMenu>();
     }
 
     private void OnMoveUpdate(InputAction.CallbackContext context)
@@ -86,5 +94,10 @@ public class PlayerControlsManager : MonoBehaviour
     private void OnWaitUpdate(InputAction.CallbackContext context)
     {
         float waiting = context.ReadValue<float>();
+    }
+
+    private void OnPauseUpdate(InputAction.CallbackContext context)
+    {
+        openMenu.OpenPauseMenu();
     }
 }

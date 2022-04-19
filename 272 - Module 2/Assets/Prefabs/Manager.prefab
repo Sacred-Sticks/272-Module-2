@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1401728404941618234}
   - component: {fileID: 1582859107}
   - component: {fileID: 8290942546255855929}
+  - component: {fileID: 5650104949360615074}
+  - component: {fileID: 3489457765575703019}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -79,6 +81,7 @@ MonoBehaviour:
   climbStr: Climb
   crouchStr: Crouch
   waitStr: Wait
+  pauseStr: Pause
   player: {fileID: 0}
 --- !u!114 &1401728404941618234
 MonoBehaviour:
@@ -128,3 +131,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelWaitTime: 2
   nextScene: 1
+--- !u!114 &5650104949360615074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401728404941618239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4dda8a41e3386444b854e59344175f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
+--- !u!114 &3489457765575703019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401728404941618239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f55e5bd2838d243b3f22f2dcf8a382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}

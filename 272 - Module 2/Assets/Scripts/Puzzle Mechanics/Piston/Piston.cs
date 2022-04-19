@@ -24,13 +24,11 @@ public class Piston : MonoBehaviour
         {
             currentSize = 0;
         }
-        moveRight += sprite.localPosition.x;
     }
 
     // Update is called once per frame
     void Update()
     {
-        sprite.localPosition = new Vector3(moveRight, 0, 0);
         if (pistonActive && currentSize < pistonSize)
         {
             currentSize = currentSize + pistonSize * Time.deltaTime / timeToExtend;

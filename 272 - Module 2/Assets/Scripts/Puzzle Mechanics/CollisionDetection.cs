@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour
 {
     private Rigidbody2D connectedBody;
+    private GameObject obj;
 
     private float initialGravityScale;
 
@@ -15,6 +16,9 @@ public class CollisionDetection : MonoBehaviour
             connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
             initialGravityScale = connectedBody.gravityScale;
             connectedBody.gravityScale = 0;
+        } else
+        {
+            obj = collision.gameObject;
         }
     }
 
@@ -27,6 +31,9 @@ public class CollisionDetection : MonoBehaviour
                 connectedBody.gravityScale = 1;
                 connectedBody = null;
             }
+        } else
+        {
+            obj = null;
         }
     }
 
@@ -45,5 +52,10 @@ public class CollisionDetection : MonoBehaviour
     public Rigidbody2D GetConnectedBody()
     {
         return connectedBody;
+    }
+
+    public GameObject GetConnectedStructure()
+    {
+        return obj;
     }
 }

@@ -4,100 +4,131 @@ using UnityEngine;
 
 public class PulleyManager : MonoBehaviour
 {
-    [SerializeField] private GameObject firstPlatform;
-    [SerializeField] private GameObject secondPlatform;
+    [SerializeField] private GameObject leftPlatform;
+    [SerializeField] private GameObject rightPlatform;
 
-    [SerializeField] private GameObject firstPulley;
-    [SerializeField] private GameObject secondPulley;
+    [SerializeField] private GameObject leftPulley;
+    [SerializeField] private GameObject rightPulley;
     [Space]
     [SerializeField] private float magnitude;
     [SerializeField] private float multiplier;
 
-    private bool first;
-    private bool second;
+    private Rigidbody2D leftBody;
+    private Rigidbody2D rightBody;
+    private Rigidbody2D leftConnectedBody;
+    private Rigidbody2D rightConnectedBody;
 
-    private Rigidbody2D firstPlatformBody;
-    private Rigidbody2D secondPlatformBody;
-
-    private Rigidbody2D firstPlatformCollision;
-    private Rigidbody2D secondPlatformCollision;
-
-    private bool pulleyLock;
+    bool leftUp, leftDown, rightUp, rightDown;
+    [SerializeField] bool pulleyLock;
 
     // Start is called before the first frame update
     void Start()
     {
-        firstPlatformBody = firstPlatform.GetComponent<Rigidbody2D>();
-        secondPlatformBody = secondPlatform.GetComponent<Rigidbody2D>();
-        firstPlatformBody.gravityScale = 0;
-        secondPlatformBody.gravityScale = 0;
-        firstPlatformBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-        secondPlatformBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        leftBody = leftPlatform.GetComponent<Rigidbody2D>();
+        rightBody = rightPlatform.GetComponent<Rigidbody2D>();
+        leftBody.gravityScale = 0;
+        rightBody.gravityScale = 0;
+        leftBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        rightBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Get Connected Rigidbody
-        firstPlatformCollision = firstPlatform.GetComponent<CollisionDetection>().GetConnectedBody();
-        secondPlatformCollision = secondPlatform.GetComponent<CollisionDetection>().GetConnectedBody();
-
-        if (!pulleyLock)
+        GetConnectedBodies();
+        if (!pulleyLock && (leftConnectedBody != null || rightConnectedBody != null))
         {
-            // Set Masses
-            float firstMass = 0;
-            float secondMass = 0;
-            if (firstPlatformCollision != null)
-                firstMass = firstPlatformCollision.mass;
-            if (secondPlatformCollision != null)
-                secondMass = secondPlatformCollision.mass;
+            Debug.Log("Connected");
+            SetMovability();
+            float massDiff = GetMassDifference();
+            SetVelocities(massDiff);
 
-            float massDiff = firstMass - secondMass;
+            Debug.Log("Mass Difference is " + massDiff);
 
-            // Check if both sides are able to move upward
-            first = false;
-            second = false;
-            if (firstPulley.transform.position.y - firstPlatform.transform.position.y > magnitude)
-                first = true;
-            if (secondPulley.transform.position.y - secondPlatform.transform.position.y > magnitude)
-                second = true;
-
-            // Assign Movement to Second platform according to which platform can move
-            if (first && second)
+            if (massDiff > 0 && (rightDown && leftUp))
             {
-                secondPlatformBody.velocity = new Vector2(0, massDiff * multiplier);
+                Debug.Log("Moving Right");
+                SetVelocities(-massDiff);
             }
-            else if (first && !second)
+            else if (massDiff < 0 && (rightUp && leftDown))
             {
-                secondPlatformBody.velocity = new Vector2(0, -secondMass * multiplier);
-            }
-            else if (second && !first)
-            {
-                secondPlatformBody.velocity = new Vector2(0, firstMass * multiplier);
+                SetVelocities(-massDiff);
+                Debug.Log("Moving Left");
             }
             else
             {
-                secondPlatformBody.velocity = Vector2.zero;
+                Debug.Log("Not Moving");
+                SetVelocities(0);
             }
-            if (secondPlatformCollision != null) secondPlatformCollision.velocity = new Vector2(secondPlatformCollision.velocity.x, secondPlatformBody.velocity.y);
-            firstPlatformBody.velocity = -secondPlatformBody.velocity;
-            if (firstPlatformCollision != null) firstPlatformCollision.velocity = new Vector2(firstPlatformCollision.velocity.x, firstPlatformBody.velocity.y);
-
         } else
         {
-            secondPlatformBody.velocity = Vector2.zero;
-            if (secondPlatformCollision != null) {
-                secondPlatformCollision.velocity = new Vector2(secondPlatformCollision.velocity.x, 0); 
-            }
-            firstPlatformBody.velocity = Vector2.zero;
-            if (firstPlatformCollision != null)
-            {
-                firstPlatformCollision.velocity = new Vector2 (firstPlatformCollision.velocity.x, 0);
-            }
+            SetVelocities(0);
         }
     }
 
-    public void SetPulleyLock(bool pulleyLock)
+    private void GetConnectedBodies()
+    {
+        leftConnectedBody = leftPlatform.GetComponent<CollisionDetection>().GetConnectedBody();
+        rightConnectedBody = rightPlatform.GetComponent<CollisionDetection>().GetConnectedBody();
+    }
+
+    private void SetMovability()
+    {
+        leftUp = CheckTop(leftPlatform.transform, leftPulley.transform);
+        leftDown = CheckBottom(leftPlatform, leftConnectedBody);
+        rightUp = CheckTop(rightPlatform.transform, rightPulley.transform);
+        rightDown = CheckBottom(rightPlatform, rightConnectedBody);
+    }
+
+    private bool CheckBottom(GameObject platform, Rigidbody2D connectedBody)
+    {
+        GameObject obj = platform.GetComponent<CollisionDetection>().GetConnectedStructure();
+        if (obj == null) {
+            Debug.Log(platform.name + "Bottom True");
+            return true;
+        }
+        Debug.Log(platform.name + "Bottom False");
+        return false;
+    }
+
+    private bool CheckTop(Transform platform, Transform pulley)
+    {
+        if (pulley.position.y - platform.position.y > magnitude)
+        {
+            Debug.Log(platform.name + " Top True");
+            return true;
+        }
+        Debug.Log(platform.name + " Top False");
+        return false;
+    }
+
+    private float GetMassDifference()
+    {
+        float diff = 0;
+        if (rightConnectedBody != null)
+        {
+            diff = rightConnectedBody.mass;
+            if (leftConnectedBody != null)
+            {
+                diff -= leftConnectedBody.mass;
+            }
+        }
+        else
+        {
+            diff = -leftConnectedBody.mass;
+        }
+        return diff;
+    }
+
+    private void SetVelocities(float massDiff)
+    {
+        massDiff *= multiplier;
+        rightBody.velocity = new Vector2(0, massDiff);
+        leftBody.velocity = -rightBody.velocity;
+        if (rightConnectedBody != null) rightConnectedBody.velocity = new Vector2(rightConnectedBody.velocity.x, rightBody.velocity.y);
+        if (leftConnectedBody != null) leftConnectedBody.velocity = new Vector2(leftConnectedBody.velocity.x, leftBody.velocity.y);
+    }
+    private void SetPulleyLock(bool pulleyLock)
     {
         this.pulleyLock = pulleyLock;
     }

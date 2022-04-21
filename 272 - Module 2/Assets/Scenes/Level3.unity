@@ -601,7 +601,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0001}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -612,7 +612,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.15}
+  m_Size: {x: 0.64, y: 0.155}
   m_EdgeRadius: 0
 --- !u!61 &551455190
 BoxCollider2D:
@@ -990,7 +990,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0001}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1001,7 +1001,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.15}
+  m_Size: {x: 0.64, y: 0.155}
   m_EdgeRadius: 0
 --- !u!61 &742256890
 BoxCollider2D:
@@ -1664,7 +1664,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0001}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1675,7 +1675,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.15}
+  m_Size: {x: 0.64, y: 0.155}
   m_EdgeRadius: 0
 --- !u!61 &890668111
 BoxCollider2D:
@@ -1912,7 +1912,7 @@ GameObject:
   - component: {fileID: 1005244407}
   m_Layer: 0
   m_Name: Stone
-  m_TagString: Untagged
+  m_TagString: Weight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2065,7 +2065,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0001}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2076,7 +2076,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.15}
+  m_Size: {x: 0.64, y: 0.155}
   m_EdgeRadius: 0
 --- !u!61 &1007039054
 BoxCollider2D:
@@ -2384,12 +2384,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9bf68ce25bf11e44bb73e591054dc03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstPlatform: {fileID: 890668108}
-  secondPlatform: {fileID: 551455187}
-  firstPulley: {fileID: 773778524}
-  secondPulley: {fileID: 1299972956}
+  leftPlatform: {fileID: 890668108}
+  rightPlatform: {fileID: 551455187}
+  leftPulley: {fileID: 1299972956}
+  rightPulley: {fileID: 773778524}
   magnitude: 1.75
   multiplier: 0.25
+  pulleyLock: 0
 --- !u!1 &1261352684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2944,6 +2945,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1287826113, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: cbdc519e11c38704da8f39933d55cda5, type: 2}
     - target: {fileID: 1343653820, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.25
@@ -3286,6 +3291,10 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: leftPulley
+      value: 
+      objectReference: {fileID: 1318578524}
+    - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: multiplier
       value: 1
       objectReference: {fileID: 0}
@@ -3294,11 +3303,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 835241080}
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: rightPulley
+      value: 
+      objectReference: {fileID: 835241080}
+    - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: leftPlatform
+      value: 
+      objectReference: {fileID: 742256887}
+    - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: secondPulley
       value: 
       objectReference: {fileID: 1318578524}
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: firstPlatform
+      value: 
+      objectReference: {fileID: 1007039051}
+    - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: rightPlatform
       value: 
       objectReference: {fileID: 1007039051}
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}

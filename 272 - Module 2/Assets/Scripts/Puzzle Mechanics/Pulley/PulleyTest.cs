@@ -39,14 +39,22 @@ public class PulleyTest : MonoBehaviour
         {
             Debug.Log("Connected");
             SetMovability();
-            if (leftUp && leftDown && rightUp && rightDown)
+            float massDiff = GetMassDifference();
+            SetVelocities(massDiff);
+
+            Debug.Log("Mass Difference is " + massDiff);
+
+            if (massDiff > 0 && (rightDown && leftUp))
             {
-                Debug.Log("Movable");
-                float massDiff = GetMassDifference();
-                SetVelocities(massDiff);
+                Debug.Log("Moving Right");
+                SetVelocities(-massDiff);
+            } else if (massDiff < 0 && (rightUp && leftDown))
+            {
+                SetVelocities(-massDiff);
+                Debug.Log("Moving Left");
             } else
             {
-                Debug.Log("Not Movable");
+                Debug.Log("Not Movint");
                 SetVelocities(0);
             }
         }
@@ -97,7 +105,7 @@ public class PulleyTest : MonoBehaviour
             }
         } else
         {
-            diff = leftConnectedBody.mass;
+            diff = -leftConnectedBody.mass;
         }
         return diff;
     }

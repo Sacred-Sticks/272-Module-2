@@ -7,14 +7,11 @@ public class CollisionDetection : MonoBehaviour
     private Rigidbody2D connectedBody;
     private GameObject obj;
 
-    private float initialGravityScale;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Rigidbody2D>() != null)
+        if (collision.tag == "Weight" || collision.tag == "Player" || collision.tag == "Piston")
         {
             connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
-            initialGravityScale = connectedBody.gravityScale;
             connectedBody.gravityScale = 0;
         } else
         {
@@ -43,7 +40,7 @@ public class CollisionDetection : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<Rigidbody2D>() == connectedBody)
             {
-                connectedBody.gravityScale = initialGravityScale;
+                connectedBody.gravityScale = 1;
                 connectedBody = null;
             }
         }

@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 58781580}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Weight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -783,9 +783,21 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: leftPulley
+      value: 
+      objectReference: {fileID: 1201225617}
+    - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: firstPulley
       value: 
       objectReference: {fileID: 1201225617}
+    - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: rightPulley
+      value: 
+      objectReference: {fileID: 1124724879}
+    - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: leftPlatform
+      value: 
+      objectReference: {fileID: 1349968895}
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: secondPulley
       value: 
@@ -794,6 +806,10 @@ PrefabInstance:
       propertyPath: firstPlatform
       value: 
       objectReference: {fileID: 1349968895}
+    - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
+      propertyPath: rightPlatform
+      value: 
+      objectReference: {fileID: 1835329565}
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: secondPlatform
       value: 

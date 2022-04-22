@@ -28,6 +28,7 @@ public class PlayerControlsManager : MonoBehaviour
     private PlayerAnimator animationController;
     private PlayerMove movementController;
     private OpenMenu openMenu;
+    private TimeManager timeManager;
 
     private void Awake()
     {
@@ -63,6 +64,7 @@ public class PlayerControlsManager : MonoBehaviour
         animationController = player.GetComponent<PlayerAnimator>();
         movementController = player.GetComponent<PlayerMove>();
         openMenu = GetComponent<OpenMenu>();
+        timeManager = GetComponent<TimeManager>();
     }
 
     private void OnMoveUpdate(InputAction.CallbackContext context)
@@ -94,6 +96,7 @@ public class PlayerControlsManager : MonoBehaviour
     private void OnWaitUpdate(InputAction.CallbackContext context)
     {
         float waiting = context.ReadValue<float>();
+        if (waiting == 1) timeManager.ResetTimer();
     }
 
     private void OnPauseUpdate(InputAction.CallbackContext context)

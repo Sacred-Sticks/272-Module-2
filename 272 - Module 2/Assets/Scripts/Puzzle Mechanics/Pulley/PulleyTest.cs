@@ -54,7 +54,7 @@ public class PulleyTest : MonoBehaviour
                 Debug.Log("Moving Left");
             } else
             {
-                Debug.Log("Not Movint");
+                Debug.Log("Not Moving");
                 SetVelocities(0);
             }
         }

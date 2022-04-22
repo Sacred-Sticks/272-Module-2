@@ -21,7 +21,6 @@ public class PulleyManager : MonoBehaviour
     bool leftUp, leftDown, rightUp, rightDown;
     [SerializeField] bool pulleyLock;
 
-    // Start is called before the first frame update
     void Start()
     {
         leftBody = leftPlatform.GetComponent<Rigidbody2D>();
@@ -32,32 +31,40 @@ public class PulleyManager : MonoBehaviour
         rightBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
 
-    // Update is called once per frame
     void Update()
     {
         GetConnectedBodies();
         if (!pulleyLock && (leftConnectedBody != null || rightConnectedBody != null))
         {
-            Debug.Log("Connected");
+            //Debug.Log("Connected");
             SetMovability();
             float massDiff = GetMassDifference();
             SetVelocities(massDiff);
 
-            Debug.Log("Mass Difference is " + massDiff);
+            if (leftConnectedBody != null)
+            {
+                //Debug.Log(leftConnectedBody.gameObject.name);
+            }
+            if (rightConnectedBody != null)
+            {
+                //Debug.Log(rightConnectedBody.gameObject.name);
+            }
+            
+            //Debug.Log("Mass Difference is " + massDiff);
 
             if (massDiff > 0 && (rightDown && leftUp))
             {
-                Debug.Log("Moving Right");
+                //Debug.Log("Moving Right");
                 SetVelocities(-massDiff);
             }
             else if (massDiff < 0 && (rightUp && leftDown))
             {
                 SetVelocities(-massDiff);
-                Debug.Log("Moving Left");
+                //Debug.Log("Moving Left");
             }
             else
             {
-                Debug.Log("Not Moving");
+                //Debug.Log("Not Moving");
                 SetVelocities(0);
             }
         } else
@@ -84,10 +91,10 @@ public class PulleyManager : MonoBehaviour
     {
         GameObject obj = platform.GetComponent<CollisionDetection>().GetConnectedStructure();
         if (obj == null) {
-            Debug.Log(platform.name + "Bottom True");
+            //Debug.Log(platform.name + "Bottom True");
             return true;
         }
-        Debug.Log(platform.name + "Bottom False");
+        //Debug.Log(platform.name + "Bottom False");
         return false;
     }
 
@@ -95,10 +102,10 @@ public class PulleyManager : MonoBehaviour
     {
         if (pulley.position.y - platform.position.y > magnitude)
         {
-            Debug.Log(platform.name + " Top True");
+            //Debug.Log(platform.name + " Top True");
             return true;
         }
-        Debug.Log(platform.name + " Top False");
+        //Debug.Log(platform.name + " Top False");
         return false;
     }
 

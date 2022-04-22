@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 1948868939666012022}
   - component: {fileID: 611551894}
   - component: {fileID: 611551895}
+  - component: {fileID: 2694359718469019769}
   m_Layer: 0
   m_Name: OldMan
   m_TagString: Player
@@ -227,7 +228,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 326409275
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 896248011664601087, guid: 9426e6ec3533db54e99d0f802d5fb080, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -347,5 +348,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31332e27a1d14a140a5c8346d50639ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2694359718469019769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948868939666012013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af83f10d684b784c9b4ea28c64afa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

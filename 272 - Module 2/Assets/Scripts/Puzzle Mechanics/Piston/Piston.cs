@@ -13,6 +13,7 @@ public class Piston : MonoBehaviour
     [SerializeField] private float moveRight;
 
     private float currentSize;
+    private bool menuPistonUsed;
 
     // Start is called before the first frame update
     void Start()
@@ -51,5 +52,21 @@ public class Piston : MonoBehaviour
     public void togglePistonActive()
     {
         pistonActive = !pistonActive;
+    }
+
+    public void TempPistonToggle()
+    {
+        if (!menuPistonUsed)
+        {
+            menuPistonUsed = true;
+            StartCoroutine("PistonTimedToggle");
+        }
+    }
+
+    IEnumerator PistonTimedToggle()
+    {
+        togglePistonActive();
+        yield return new WaitForSeconds(.25f);
+        togglePistonActive();
     }
 }

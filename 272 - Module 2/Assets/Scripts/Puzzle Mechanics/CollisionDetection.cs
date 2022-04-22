@@ -11,6 +11,7 @@ public class CollisionDetection : MonoBehaviour
     {
         if (collision.tag == "Weight" || collision.tag == "Player" || collision.tag == "Piston")
         {
+            SetWeighted(collision.gameObject, true);
             connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
             connectedBody.gravityScale = 0;
         } else
@@ -21,6 +22,7 @@ public class CollisionDetection : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        SetWeighted(collision.gameObject, false);
         if (connectedBody != null)
         {
             if (collision.gameObject.GetComponent<Rigidbody2D>() == connectedBody)
@@ -43,6 +45,15 @@ public class CollisionDetection : MonoBehaviour
                 connectedBody.gravityScale = 1;
                 connectedBody = null;
             }
+        }
+    }
+
+    private void SetWeighted(GameObject obj, bool weighted)
+    {
+        if (obj.GetComponent<WeightedObject>() != null)
+        {
+            WeightedObject connectedWeight = obj.GetComponent<WeightedObject>();
+            connectedWeight.SetIsWeighted(weighted);
         }
     }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 575574107481565353}
   - component: {fileID: 575574107481565358}
   - component: {fileID: 3549455115637192821}
+  - component: {fileID: 2574458001899355371}
   m_Layer: 0
   m_Name: Statue
   m_TagString: Weight
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 326409275
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 40b94acaea297ee429f79c39866861ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -132,5 +133,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc53fc9064ca6dd459eb64082c05bee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2574458001899355371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575574107481565364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af83f10d684b784c9b4ea28c64afa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

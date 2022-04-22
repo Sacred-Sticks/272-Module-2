@@ -51,6 +51,9 @@ TagManager:
   - name: Rope
     uniqueID: 2762613357
     locked: 0
+  - name: Stone
+    uniqueID: 3899028853
+    locked: 0
   - name: Interactable
     uniqueID: 2849561691
     locked: 0
@@ -59,4 +62,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 326409275
+    locked: 0
+  - name: UI
+    uniqueID: 3488688377
     locked: 0

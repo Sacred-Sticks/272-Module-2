@@ -16,6 +16,7 @@ public class TimeManager : MonoBehaviour
 
     private void Start()
     {
+        timer = waitTime;
         StartCoroutine("StartTimer");
     }
 
@@ -23,7 +24,7 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        Debug.Log(timer);
+        //Debug.Log(timer);
         if (numRespawns > 0 && canStartTimer)
         {
             Debug.Log("Timer Ran Out, causing respawn");

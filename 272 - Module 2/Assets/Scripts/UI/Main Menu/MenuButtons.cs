@@ -9,4 +9,9 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
 }

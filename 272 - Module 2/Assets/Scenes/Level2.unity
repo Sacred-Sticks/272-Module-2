@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 579413255}
     - target: {fileID: 1582859107, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: waitTime
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1582859107, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: numRespawns
@@ -732,13 +732,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1287826111, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1343653820, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1343653820, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.907
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1345339070, guid: 1f2f21bf61c0b9c41b601cd639eb011b, type: 3}
       propertyPath: floorLayer.m_Bits
@@ -2772,7 +2776,7 @@ GameObject:
   - component: {fileID: 1709940286}
   - component: {fileID: 1709940285}
   - component: {fileID: 1709940284}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightPlatform
   m_TagString: Pulley Platform
   m_Icon: {fileID: 0}
@@ -3473,7 +3477,7 @@ GameObject:
   - component: {fileID: 2108730829}
   - component: {fileID: 2108730828}
   - component: {fileID: 2108730827}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftPlatform
   m_TagString: Pulley Platform
   m_Icon: {fileID: 0}

@@ -29,42 +29,49 @@ public class PulleyManager : MonoBehaviour
         rightBody.gravityScale = 0;
         leftBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rightBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        leftConnectedBody = null;
+        rightConnectedBody = null;
     }
 
     void Update()
     {
+        if (leftConnectedBody != null)
+        {
+            Debug.Log(leftConnectedBody.gameObject.name);
+        }
+
         GetConnectedBodies();
         if (!pulleyLock && (leftConnectedBody != null || rightConnectedBody != null))
         {
-            //Debug.Log("Connected");
+            Debug.Log("Connected");
             SetMovability();
             float massDiff = GetMassDifference();
             SetVelocities(massDiff);
 
             if (leftConnectedBody != null)
             {
-                //Debug.Log(leftConnectedBody.gameObject.name);
+                Debug.Log(leftConnectedBody.gameObject.name);
             }
             if (rightConnectedBody != null)
             {
-                //Debug.Log(rightConnectedBody.gameObject.name);
+                Debug.Log(rightConnectedBody.gameObject.name);
             }
             
-            //Debug.Log("Mass Difference is " + massDiff);
+            Debug.Log("Mass Difference is " + massDiff);
 
             if (massDiff > 0 && (rightDown && leftUp))
             {
-                //Debug.Log("Moving Right");
+                Debug.Log("Moving Right");
                 SetVelocities(-massDiff);
             }
             else if (massDiff < 0 && (rightUp && leftDown))
             {
                 SetVelocities(-massDiff);
-                //Debug.Log("Moving Left");
+                Debug.Log("Moving Left");
             }
             else
             {
-                //Debug.Log("Not Moving");
+                Debug.Log("Not Moving");
                 SetVelocities(0);
             }
         } else

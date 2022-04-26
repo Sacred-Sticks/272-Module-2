@@ -9,10 +9,15 @@ public class CollisionDetection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Weight" || collision.tag == "Player" || collision.tag == "Piston")
+        if (collision.gameObject.tag == "Weight" || collision.tag == "Player" || collision.tag == "Piston")
         {
             SetWeighted(collision.gameObject, true);
             connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
+            connectedBody.gravityScale = 0;
+        } else if (collision.gameObject.transform.parent && collision.gameObject.transform.parent.tag == "Player")
+        {
+            SetWeighted(collision.gameObject.transform.parent.gameObject, true);
+            connectedBody = collision.gameObject.transform.parent.gameObject.GetComponent<Rigidbody2D>();
             connectedBody.gravityScale = 0;
         } else
         {

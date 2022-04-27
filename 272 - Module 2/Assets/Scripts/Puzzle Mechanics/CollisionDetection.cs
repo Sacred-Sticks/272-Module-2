@@ -40,12 +40,25 @@ public class CollisionDetection : MonoBehaviour
             body.gravityScale = 1;
             bodies.Remove(body);
             SetWeighted(body.gameObject, false);
-            connectedBody = null;
         }
         else 
         {
             obj = null;
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Rigidbody2D body = collision.gameObject.GetComponent<Rigidbody2D>();
+        if (connectedBody == body)
+        {
+            connectedBody = null;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
     }
 
     private void AddBodyToList(Rigidbody2D body)

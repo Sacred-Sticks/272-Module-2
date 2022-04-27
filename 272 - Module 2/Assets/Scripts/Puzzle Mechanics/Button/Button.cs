@@ -24,15 +24,17 @@ public class Button : MonoBehaviour
 
     void Update()
     {
-        connectedBody = GetComponent<CollisionDetection>().GetConnectedBody();
 
+        connectedBody = GetComponent<CollisionDetection>().GetBody();
         if (connectedBody == null && buttonActive)
         {
+            //Debug.Log("Button Released");
             transform.position = originalPosition;
             buttonReleased.Invoke();
             buttonActive = false;
         } else if (connectedBody != null && !buttonActive)
         {
+            //Debug.Log("Button Pressed");
             buttonActive = true;
             connectedBody.gameObject.transform.parent = transform;
             transform.position = originalPosition - transform.up * heightModifier;

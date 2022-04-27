@@ -27,7 +27,7 @@ public class TimeManager : MonoBehaviour
         //Debug.Log(timer);
         if (numRespawns > 0 && canStartTimer)
         {
-            Debug.Log("Timer Ran Out, causing respawn");
+            //Debug.Log("Timer Ran Out, causing respawn");
             StartCoroutine("StartTimer");
         }
     }
@@ -50,7 +50,7 @@ public class TimeManager : MonoBehaviour
         numRespawns--;
         canSpawn = false;
         timer = waitTime;
-        Debug.Log("Statue Spawned");
+        //Debug.Log("Statue Spawned");
     }
 
     public float GetTimer()

@@ -15,8 +15,8 @@ public class PulleyTest : MonoBehaviour
 
     private Rigidbody2D leftBody;
     private Rigidbody2D rightBody;
-    private Rigidbody2D leftConnectedBody;
-    private Rigidbody2D rightConnectedBody;
+    private List<Rigidbody2D> leftBodies;
+    private List<Rigidbody2D> rightBodies;
 
     bool leftUp, leftDown, rightUp, rightDown;
 
@@ -35,26 +35,26 @@ public class PulleyTest : MonoBehaviour
     void Update()
     {
         GetConnectedBodies();
-        if (leftConnectedBody != null || rightConnectedBody != null)
+        if (leftBodies.Count != 0 || rightBodies.Count != 0)
         {
-            Debug.Log("Connected");
+            //Debug.Log("Connected");
             SetMovability();
             float massDiff = GetMassDifference();
             SetVelocities(massDiff);
 
-            Debug.Log("Mass Difference is " + massDiff);
+            //Debug.Log("Mass Difference is " + massDiff);
 
             if (massDiff > 0 && (rightDown && leftUp))
             {
-                Debug.Log("Moving Right");
+                //Debug.Log("Moving Right");
                 SetVelocities(-massDiff);
             } else if (massDiff < 0 && (rightUp && leftDown))
             {
                 SetVelocities(-massDiff);
-                Debug.Log("Moving Left");
+                //Debug.Log("Moving Left");
             } else
             {
-                Debug.Log("Not Moving");
+                //Debug.Log("Not Moving");
                 SetVelocities(0);
             }
         }
@@ -62,23 +62,23 @@ public class PulleyTest : MonoBehaviour
 
     private void GetConnectedBodies()
     {
-        leftConnectedBody = leftPlatform.GetComponent<CollisionDetection>().GetConnectedBody();
-        rightConnectedBody = rightPlatform.GetComponent<CollisionDetection>().GetConnectedBody();
+        this.leftBodies = leftPlatform.GetComponent<CollisionTest>().GetConnectedBodies();
+        this.rightBodies = rightPlatform.GetComponent<CollisionTest>().GetConnectedBodies();
     }
 
     private void SetMovability()
     {
         leftUp = CheckTop(leftPlatform.transform, leftPulley.transform);
-        leftDown = CheckBottom(leftPlatform, leftConnectedBody);
+        leftDown = CheckBottom(leftPlatform);
         rightUp = CheckTop(rightPlatform.transform, rightPulley.transform);
-        rightDown = CheckBottom(rightPlatform, rightConnectedBody);
+        rightDown = CheckBottom(rightPlatform);
     }
     
-    private bool CheckBottom(GameObject platform, Rigidbody2D connectedBody)
+    private bool CheckBottom(GameObject platform)
     {
-        GameObject obj = platform.GetComponent<CollisionDetection>().GetConnectedStructure();
+        GameObject obj = platform.GetComponent<CollisionTest>().GetConnectedStructure();
         if (obj == null) { Debug.Log(platform.name + "Bottom True"); return true; }
-        Debug.Log(platform.name + "Bottom False");
+        //Debug.Log(platform.name + "Bottom False");
         return false;
     }
 
@@ -86,26 +86,35 @@ public class PulleyTest : MonoBehaviour
     {
         if (pulley.position.y - platform.position.y > magnitude)
         {
-            Debug.Log(platform.name + " Top True");
+            //Debug.Log(platform.name + " Top True");
             return true;
         }
-        Debug.Log(platform.name + " Top False");
+        //Debug.Log(platform.name + " Top False");
         return false;
     }
 
     private float GetMassDifference()
     {
         float diff = 0;
-        if (rightConnectedBody != null)
+        if (rightBodies.Count > 0)
         {
-            diff = rightConnectedBody.mass;
-            if (leftConnectedBody != null)
+            foreach (var body in rightBodies)
             {
-                diff -= leftConnectedBody.mass;
+                diff += body.mass;
+            }
+            if (leftBodies.Count > 0)
+            {
+                foreach (var body in leftBodies)
+                {
+                    diff -= body.mass;
+                }
             }
         } else
         {
-            diff = -leftConnectedBody.mass;
+            foreach (var body in leftBodies)
+            {
+                diff -= body.mass;
+            }
         }
         return diff;
     }
@@ -113,9 +122,15 @@ public class PulleyTest : MonoBehaviour
     private void SetVelocities(float massDiff)
     {
         massDiff *= multiplier;
-        rightBody.velocity = new Vector2(0, massDiff);
-        leftBody.velocity = -rightBody.velocity;
-        if (rightConnectedBody != null) rightConnectedBody.velocity = rightBody.velocity;
-        if (leftConnectedBody != null) leftConnectedBody.velocity = leftBody.velocity;
+        rightBody.velocity = new Vector2(rightBody.velocity.x, massDiff);
+        leftBody.velocity = new Vector2 (leftBody.velocity.x, -massDiff);
+        if (rightBodies.Count > 0) foreach (var body in rightBodies)
+            {
+                body.velocity = new Vector2(body.velocity.x, massDiff);
+            }
+        if (leftBodies.Count > 0) foreach (var body in leftBodies)
+            {
+                body.velocity = new Vector2(body.velocity.x, -massDiff);
+            }
     }
 }

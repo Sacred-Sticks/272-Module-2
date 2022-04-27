@@ -2,31 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionDetection : MonoBehaviour
+public class CollisionTest : MonoBehaviour
 {
     List<Rigidbody2D> bodies = new List<Rigidbody2D>();
-    Rigidbody2D connectedBody;
     GameObject obj = null;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision Detected");
         if (collision.tag == "Weight" || collision.tag == "Player" || collision.tag == "Piston")
         {
             if (!bodies.Contains(collision.gameObject.GetComponent<Rigidbody2D>()))
             {
-                Debug.Log("Collision Set to Connected");
                 AddBodyToList(collision.gameObject.GetComponent<Rigidbody2D>());
-                connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
             }
-        }
-        else if (collision.gameObject.transform.parent && collision.gameObject.transform.parent.tag == "Player")
+        } else if (collision.gameObject.transform.parent && collision.gameObject.transform.parent.tag == "Player")
         {
-            Debug.Log("Collision Set to Connected");
             AddBodyToList(collision.transform.parent.GetComponent<Rigidbody2D>());
-            connectedBody = collision.transform.parent.gameObject.GetComponent<Rigidbody2D>();
-        }
-        else
+        } else
         {
             obj = collision.gameObject;
         }
@@ -35,14 +27,11 @@ public class CollisionDetection : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Rigidbody2D body = collision.gameObject.GetComponent<Rigidbody2D>();
-        if (bodies.Contains(body))
-        {
+        if (bodies.Contains(body)) {
             body.gravityScale = 1;
             bodies.Remove(body);
             SetWeighted(body.gameObject, false);
-            connectedBody = null;
-        }
-        else 
+        } else
         {
             obj = null;
         }
@@ -75,11 +64,5 @@ public class CollisionDetection : MonoBehaviour
     public GameObject GetConnectedStructure()
     {
         return obj;
-    }
-
-    public Rigidbody2D GetBody()
-    {
-        if (connectedBody != null) Debug.Log(connectedBody.name);
-        return connectedBody;
     }
 }

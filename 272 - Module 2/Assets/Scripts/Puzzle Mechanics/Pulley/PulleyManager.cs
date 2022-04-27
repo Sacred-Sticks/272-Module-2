@@ -15,12 +15,13 @@ public class PulleyManager : MonoBehaviour
 
     private Rigidbody2D leftBody;
     private Rigidbody2D rightBody;
-    private Rigidbody2D leftConnectedBody;
-    private Rigidbody2D rightConnectedBody;
+    private List<Rigidbody2D> leftBodies;
+    private List<Rigidbody2D> rightBodies;
 
     bool leftUp, leftDown, rightUp, rightDown;
-    [SerializeField] bool pulleyLock;
+    bool pulleyLock;
 
+    // Start is called before the first frame update
     void Start()
     {
         leftBody = leftPlatform.GetComponent<Rigidbody2D>();
@@ -29,49 +30,34 @@ public class PulleyManager : MonoBehaviour
         rightBody.gravityScale = 0;
         leftBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rightBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-        leftConnectedBody = null;
-        rightConnectedBody = null;
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (leftConnectedBody != null)
-        {
-            Debug.Log(leftConnectedBody.gameObject.name);
-        }
-
         GetConnectedBodies();
-        if (!pulleyLock && (leftConnectedBody != null || rightConnectedBody != null))
+        if (!pulleyLock && (leftBodies.Count != 0 || rightBodies.Count != 0))
         {
-            Debug.Log("Connected");
+            //Debug.Log("Connected");
             SetMovability();
             float massDiff = GetMassDifference();
             SetVelocities(massDiff);
 
-            if (leftConnectedBody != null)
-            {
-                Debug.Log(leftConnectedBody.gameObject.name);
-            }
-            if (rightConnectedBody != null)
-            {
-                Debug.Log(rightConnectedBody.gameObject.name);
-            }
-            
-            Debug.Log("Mass Difference is " + massDiff);
+            //Debug.Log("Mass Difference is " + massDiff);
 
             if (massDiff > 0 && (rightDown && leftUp))
             {
-                Debug.Log("Moving Right");
+                //Debug.Log("Moving Right");
                 SetVelocities(-massDiff);
             }
             else if (massDiff < 0 && (rightUp && leftDown))
             {
                 SetVelocities(-massDiff);
-                Debug.Log("Moving Left");
+                //Debug.Log("Moving Left");
             }
             else
             {
-                Debug.Log("Not Moving");
+                //Debug.Log("Not Moving");
                 SetVelocities(0);
             }
         } else
@@ -80,26 +66,32 @@ public class PulleyManager : MonoBehaviour
         }
     }
 
+    public void SetPulleyLock(bool pulleyLock)
+    {
+        this.pulleyLock = pulleyLock;
+    }
+
     private void GetConnectedBodies()
     {
-        leftConnectedBody = leftPlatform.GetComponent<CollisionDetection>().GetConnectedBody();
-        rightConnectedBody = rightPlatform.GetComponent<CollisionDetection>().GetConnectedBody();
+        this.leftBodies = leftPlatform.GetComponent<CollisionDetection>().GetConnectedBodies();
+        this.rightBodies = rightPlatform.GetComponent<CollisionDetection>().GetConnectedBodies();
     }
 
     private void SetMovability()
     {
         leftUp = CheckTop(leftPlatform.transform, leftPulley.transform);
-        leftDown = CheckBottom(leftPlatform, leftConnectedBody);
+        leftDown = CheckBottom(leftPlatform);
         rightUp = CheckTop(rightPlatform.transform, rightPulley.transform);
-        rightDown = CheckBottom(rightPlatform, rightConnectedBody);
+        rightDown = CheckBottom(rightPlatform);
     }
 
-    private bool CheckBottom(GameObject platform, Rigidbody2D connectedBody)
+    private bool CheckBottom(GameObject platform)
     {
         GameObject obj = platform.GetComponent<CollisionDetection>().GetConnectedStructure();
-        if (obj == null) {
-            //Debug.Log(platform.name + "Bottom True");
-            return true;
+        if (obj == null) 
+        { 
+            //Debug.Log(platform.name + "Bottom True"); 
+            return true; 
         }
         //Debug.Log(platform.name + "Bottom False");
         return false;
@@ -119,17 +111,26 @@ public class PulleyManager : MonoBehaviour
     private float GetMassDifference()
     {
         float diff = 0;
-        if (rightConnectedBody != null)
+        if (rightBodies.Count > 0)
         {
-            diff = rightConnectedBody.mass;
-            if (leftConnectedBody != null)
+            foreach (var body in rightBodies)
             {
-                diff -= leftConnectedBody.mass;
+                diff += body.mass;
+            }
+            if (leftBodies.Count > 0)
+            {
+                foreach (var body in leftBodies)
+                {
+                    diff -= body.mass;
+                }
             }
         }
         else
         {
-            diff = -leftConnectedBody.mass;
+            foreach (var body in leftBodies)
+            {
+                diff -= body.mass;
+            }
         }
         return diff;
     }
@@ -137,13 +138,15 @@ public class PulleyManager : MonoBehaviour
     private void SetVelocities(float massDiff)
     {
         massDiff *= multiplier;
-        rightBody.velocity = new Vector2(0, massDiff);
-        leftBody.velocity = -rightBody.velocity;
-        if (rightConnectedBody != null) rightConnectedBody.velocity = new Vector2(rightConnectedBody.velocity.x, rightBody.velocity.y);
-        if (leftConnectedBody != null) leftConnectedBody.velocity = new Vector2(leftConnectedBody.velocity.x, leftBody.velocity.y);
-    }
-    private void SetPulleyLock(bool pulleyLock)
-    {
-        this.pulleyLock = pulleyLock;
+        rightBody.velocity = new Vector2(rightBody.velocity.x, massDiff);
+        leftBody.velocity = new Vector2(leftBody.velocity.x, -massDiff);
+        if (rightBodies.Count > 0) foreach (var body in rightBodies)
+            {
+                body.velocity = new Vector2(body.velocity.x, massDiff);
+            }
+        if (leftBodies.Count > 0) foreach (var body in leftBodies)
+            {
+                body.velocity = new Vector2(body.velocity.x, -massDiff);
+            }
     }
 }

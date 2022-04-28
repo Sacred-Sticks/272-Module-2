@@ -9,7 +9,7 @@ public class BreakPlank : MonoBehaviour
 
     private void Update()
     {
-        if (platform.position.y <= lowValue)
+        if (platform.position.y <= transform.position.y + lowValue)
         {
             Destroy(gameObject);
         }

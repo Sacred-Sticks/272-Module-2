@@ -46,7 +46,7 @@ public class Piston : MonoBehaviour
             }
         }
 
-        transform.localScale = new Vector3(currentSize, 1, 1);
+        transform.localScale = new Vector3(currentSize, transform.localScale.y, transform.localScale.z);
     }
 
     public void togglePistonActive()

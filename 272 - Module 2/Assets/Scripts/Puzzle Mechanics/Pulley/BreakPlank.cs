@@ -11,6 +11,7 @@ public class BreakPlank : MonoBehaviour
     {
         if (platform.position.y <= transform.position.y + lowValue)
         {
+            platform.GetComponent<AnimationEventAudio>().playSingleSound();
             Destroy(gameObject);
         }
     }

@@ -10,19 +10,18 @@ public class CollisionDetection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision Detected");
         if (collision.tag == "Weight" || collision.tag == "Player" || collision.tag == "Piston")
         {
             if (!bodies.Contains(collision.gameObject.GetComponent<Rigidbody2D>()))
             {
-                Debug.Log("Collision Set to Connected");
+                //Debug.Log("Collision Set to Connected");
                 AddBodyToList(collision.gameObject.GetComponent<Rigidbody2D>());
                 connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
             }
         }
         else if (collision.gameObject.transform.parent && collision.gameObject.transform.parent.tag == "Player")
         {
-            Debug.Log("Collision Set to Connected");
+            //Debug.Log("Collision Set to Connected");
             AddBodyToList(collision.transform.parent.GetComponent<Rigidbody2D>());
             connectedBody = collision.transform.parent.gameObject.GetComponent<Rigidbody2D>();
         }
@@ -92,7 +91,7 @@ public class CollisionDetection : MonoBehaviour
 
     public Rigidbody2D GetBody()
     {
-        if (connectedBody != null) Debug.Log(connectedBody.name);
+        //if (connectedBody != null) Debug.Log(connectedBody.name);
         return connectedBody;
     }
 }

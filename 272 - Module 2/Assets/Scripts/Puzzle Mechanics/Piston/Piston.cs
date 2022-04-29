@@ -9,7 +9,6 @@ public class Piston : MonoBehaviour
     [SerializeField] private float timeToExtend;
     [SerializeField] private float timeToRetract;
     [Space]
-    [SerializeField] private Transform sprite;
     [SerializeField] private float moveRight;
 
     private float currentSize;

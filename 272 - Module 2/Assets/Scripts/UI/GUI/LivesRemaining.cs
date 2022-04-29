@@ -20,6 +20,6 @@ public class LivesRemaining : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        uiElement.text = timeManager.GetLives().ToString();
+        uiElement.text = "Lives: " + timeManager.GetLives().ToString();
     }
 }

@@ -23,7 +23,8 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
+        if (numRespawns > 0) timer -= Time.deltaTime;
+        else numRespawns = 0;
         //Debug.Log(timer);
         if (numRespawns > 0 && canStartTimer)
         {
@@ -42,15 +43,18 @@ public class TimeManager : MonoBehaviour
         
     }
 
-    private void SpawnStatue()
+    public void SpawnStatue()
     {
-        GameObject statue = Instantiate(stoneStatue, player.position, player.rotation);
-        statue.GetComponent<SpriteRenderer>().flipX = player.GetComponent<SpriteRenderer>().flipX;
-        canStartTimer = true;
-        numRespawns--;
-        canSpawn = false;
-        timer = waitTime;
-        //Debug.Log("Statue Spawned");
+        if (numRespawns > 0)
+        {
+            GameObject statue = Instantiate(stoneStatue, player.position, player.rotation);
+            statue.GetComponent<SpriteRenderer>().flipX = player.GetComponent<SpriteRenderer>().flipX;
+            canStartTimer = true;
+            numRespawns--;
+            canSpawn = false;
+            timer = waitTime;
+            //Debug.Log("Statue Spawned");
+        }
     }
 
     public float GetTimer()

@@ -24,7 +24,7 @@ public class TimeRemaining : MonoBehaviour
     void Update()
     {
         float timeRemaining = timeManager.GetTimer();
-        if (!(timeRemaining < 0))
-        uiElement.text = timeRemaining.ToString("F2");
+        if (timeManager.GetLives() > 0) uiElement.text = timeRemaining.ToString("F2");
+        else uiElement.text = "0";
     }
 }

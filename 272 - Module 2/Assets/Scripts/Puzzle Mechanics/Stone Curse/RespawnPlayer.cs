@@ -12,5 +12,7 @@ public class RespawnPlayer : MonoBehaviour
         player = GameObject.Find("OldMan").transform;
         respawnPoint = GameObject.Find("Respawn Point").transform;
         player.position = respawnPoint.position;
+        player.GetComponent<Rigidbody2D>().gravityScale = 1;
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 }

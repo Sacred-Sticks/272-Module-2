@@ -38,21 +38,19 @@ public class PulleyManager : MonoBehaviour
         GetConnectedBodies();
         if (!pulleyLock && (leftBodies.Count != 0 || rightBodies.Count != 0))
         {
-            //Debug.Log("Connected");
             SetMovability();
             float massDiff = GetMassDifference();
-            SetVelocities(massDiff);
 
             //Debug.Log("Mass Difference is " + massDiff);
 
             if (massDiff > 0 && (rightDown && leftUp))
             {
+                SetVelocities(massDiff);
                 //Debug.Log("Moving Right");
-                SetVelocities(-massDiff);
             }
             else if (massDiff < 0 && (rightUp && leftDown))
             {
-                SetVelocities(-massDiff);
+                SetVelocities(massDiff);
                 //Debug.Log("Moving Left");
             }
             else
@@ -137,16 +135,17 @@ public class PulleyManager : MonoBehaviour
 
     private void SetVelocities(float massDiff)
     {
+        //Debug.Log("Setting Velocity as " + massDiff + " on " + leftBody.name);
         massDiff *= multiplier;
-        rightBody.velocity = new Vector2(rightBody.velocity.x, massDiff);
-        leftBody.velocity = new Vector2(leftBody.velocity.x, -massDiff);
+        rightBody.velocity = new Vector2(rightBody.velocity.x, -massDiff);
+        leftBody.velocity = new Vector2(leftBody.velocity.x, massDiff);
         if (rightBodies.Count > 0) foreach (var body in rightBodies)
             {
-                body.velocity = new Vector2(body.velocity.x, massDiff);
+                body.velocity = new Vector2(body.velocity.x, -massDiff);
             }
         if (leftBodies.Count > 0) foreach (var body in leftBodies)
             {
-                body.velocity = new Vector2(body.velocity.x, -massDiff);
+                body.velocity = new Vector2(body.velocity.x, massDiff);
             }
     }
 }

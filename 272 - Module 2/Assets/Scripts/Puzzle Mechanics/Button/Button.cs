@@ -17,6 +17,7 @@ public class Button : MonoBehaviour
     private Vector3 originalPosition;
 
     private bool buttonActive;
+    private bool buttonChanged;
 
     void Start()
     {
@@ -28,39 +29,29 @@ public class Button : MonoBehaviour
 
     void Update()
     {
-
-        connectedBody = collisionDetection.GetBody();
         bodies = collisionDetection.GetConnectedBodies();
-        //if (connectedBody == null && buttonActive)
-        //{
-        //    //Debug.Log("Button Released");
-        //    transform.position = originalPosition;
-        //    buttonReleased.Invoke();
-        //    buttonActive = false;
-        //} else if (connectedBody != null && !buttonActive)
-        //{
-        //    //Debug.Log("Button Pressed");
-        //    buttonActive = true;
-        //    connectedBody.gameObject.transform.parent = transform;
-        //    transform.position = originalPosition - transform.up * heightModifier;
-        //    connectedBody.gameObject.transform.parent = null;
-        //    buttonPressed.Invoke();
-        //    connectedBody.transform.position = new Vector3(connectedBody.transform.position.x, transform.position.y, connectedBody.transform.position.z);
-        //    connectedBody.gravityScale = 1;
-        //    Debug.Log("Button Pos: " + transform.position + ". Player Position: " + connectedBody.gameObject.transform.position);
-        //}
         if (bodies.Count == 0 && buttonActive)
         {
             transform.position = originalPosition;
-            buttonReleased.Invoke();
             buttonActive = false;
             StopAllCoroutines();
+            buttonChanged = true;
         } else if (bodies.Count > 0 && !buttonActive)
         {
             buttonActive = true;
+            buttonChanged = true;
             StartCoroutine("lowerButton");
         }
-        Debug.Log(bodies.Count + " " + buttonActive);
+
+        if (buttonActive && buttonChanged)
+        {
+            buttonPressed.Invoke();
+            buttonChanged = false;
+        } else if (buttonChanged)
+        {
+            buttonReleased.Invoke();
+            buttonChanged = false;
+        }
     }
 
     IEnumerator lowerButton()
@@ -76,7 +67,5 @@ public class Button : MonoBehaviour
             body.gameObject.transform.parent = null;
             body.gravityScale = 1;
         }
-
-        buttonPressed.Invoke();
     }
 }

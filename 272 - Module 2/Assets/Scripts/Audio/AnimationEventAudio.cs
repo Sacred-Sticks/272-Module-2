@@ -28,6 +28,6 @@ public class AnimationEventAudio : MonoBehaviour
     {
         soundSource.clip = singleSound;
         soundSource.Play();
-        Debug.Log("Played " + singleSound.name);
+        //Debug.Log("Played " + singleSound.name);
     }
 }

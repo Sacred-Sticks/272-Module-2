@@ -2178,6 +2178,10 @@ PrefabInstance:
       propertyPath: pistonSize
       value: 4.75
       objectReference: {fileID: 0}
+    - target: {fileID: 6314430132026623509, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
+      propertyPath: timeToRetract
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 955b39d6bf4d8e647b7771289a052346, type: 3}
 --- !u!1001 &1641408386

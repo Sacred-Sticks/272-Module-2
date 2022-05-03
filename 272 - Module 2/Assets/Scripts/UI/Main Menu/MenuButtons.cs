@@ -12,6 +12,7 @@ public class MenuButtons : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Started");
         Time.timeScale = 1;
     }
 }

@@ -277,12 +277,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1459704607386357838}
+        m_TargetAssemblyTypeName: AnimationEventAudio, Assembly-CSharp
+        m_MethodName: playSingleSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonReleased:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Piston, Assembly-CSharp
-        m_MethodName: togglePistonActive
+        m_TargetAssemblyTypeName: AnimationEventAudio, Assembly-CSharp
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -318,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomFromList: []
-  singleSound: {fileID: 8300000, guid: 430d008955e379841aae5996855f7dc4, type: 3}
+  singleSound: {fileID: 8300000, guid: d2257a28f602f294f83927ae3481183a, type: 3}
 --- !u!82 &1247487876119114293
 AudioSource:
   m_ObjectHideFlags: 0
@@ -331,7 +343,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.005
+  m_Volume: 0.04
   m_Pitch: 1
   Loop: 0
   Mute: 0

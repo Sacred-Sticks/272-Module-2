@@ -180,7 +180,6 @@ MonoBehaviour:
   - Sound Queue
   - Button
   - Piston
-  - Pulley Platform
 --- !u!82 &3609250756415816223
 AudioSource:
   m_ObjectHideFlags: 0

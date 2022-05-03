@@ -377,14 +377,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomFromList:
-  - {fileID: 8300000, guid: 5c00743a0889c934e9bb8b8ef7cdd7ab, type: 3}
+  - {fileID: 8300000, guid: df9793984832e1c48947ad8b5ffb04e8, type: 3}
   - {fileID: 8300000, guid: 630420810d739864696c5dc0d6f2bfbb, type: 3}
   - {fileID: 8300000, guid: cf1e6a81f6ff06341bf483c753af2e81, type: 3}
-  - {fileID: 8300000, guid: 9f6f669d204cddf49aa672e6b8c1ba1a, type: 3}
-  - {fileID: 8300000, guid: 216d8de2c6e02df44aa0ad02bd2bbe6a, type: 3}
-  - {fileID: 8300000, guid: 4096254d3befbf546b816d9c87db4903, type: 3}
-  - {fileID: 8300000, guid: 092b023467b5e9b4da70e64f72979c47, type: 3}
-  - {fileID: 8300000, guid: 07718b9dae3affa45946f2f915a7b1ea, type: 3}
   singleSound: {fileID: 8300000, guid: f2b516bce3db7db48947262a1ed08f16, type: 3}
 --- !u!82 &7523324499662742674
 AudioSource:

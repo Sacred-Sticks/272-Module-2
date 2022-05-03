@@ -8,7 +8,8 @@ public class OpenMenu : MonoBehaviour
 
     public void OpenPauseMenu()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
+        Debug.Log("Paused: Time Scale at " + Time.timeScale);
         pauseMenu.SetActive(true);
     }
 }

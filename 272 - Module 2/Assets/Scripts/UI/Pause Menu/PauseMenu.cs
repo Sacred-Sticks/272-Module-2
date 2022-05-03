@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     public void ResumeGame()
     {
-        Debug.Log("Resure");
+        Debug.Log("Resume");
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
     }

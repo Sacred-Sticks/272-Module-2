@@ -114,12 +114,14 @@ public class PulleyManager : MonoBehaviour
             foreach (var body in rightBodies)
             {
                 diff += body.mass;
+                Debug.Log("Mass Difference: " + diff);
             }
             if (leftBodies.Count > 0)
             {
                 foreach (var body in leftBodies)
                 {
                     diff -= body.mass;
+                    Debug.Log("Mass Difference: " + diff);
                 }
             }
         }
@@ -128,6 +130,7 @@ public class PulleyManager : MonoBehaviour
             foreach (var body in leftBodies)
             {
                 diff -= body.mass;
+                Debug.Log("Mass Difference: " + diff);
             }
         }
         return diff;
@@ -135,7 +138,7 @@ public class PulleyManager : MonoBehaviour
 
     private void SetVelocities(float massDiff)
     {
-        //Debug.Log("Setting Velocity as " + massDiff + " on " + leftBody.name);
+        Debug.Log("Setting Velocity as " + massDiff + " on " + leftBody.name);
         massDiff *= multiplier;
         rightBody.velocity = new Vector2(rightBody.velocity.x, -massDiff);
         leftBody.velocity = new Vector2(leftBody.velocity.x, massDiff);

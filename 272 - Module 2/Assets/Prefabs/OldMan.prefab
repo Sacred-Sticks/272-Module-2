@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   climbCheck: {fileID: 1343653820}
   climbGoal: {fileID: 1345339069}
-  fallingSpeed: 0.5
+  fallingSpeed: 1
 --- !u!114 &1948868939666012022
 MonoBehaviour:
   m_ObjectHideFlags: 0

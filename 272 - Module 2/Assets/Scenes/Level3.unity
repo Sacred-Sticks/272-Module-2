@@ -1346,7 +1346,7 @@ GameObject:
   - component: {fileID: 551455190}
   - component: {fileID: 551455189}
   - component: {fileID: 551455188}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightPlatform (1)
   m_TagString: Pulley Platform
   m_Icon: {fileID: 0}
@@ -1561,7 +1561,7 @@ GameObject:
   - component: {fileID: 742256890}
   - component: {fileID: 742256889}
   - component: {fileID: 742256888}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftPlatform
   m_TagString: Pulley Platform
   m_Icon: {fileID: 0}
@@ -2029,7 +2029,7 @@ GameObject:
   - component: {fileID: 890668111}
   - component: {fileID: 890668110}
   - component: {fileID: 890668109}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftPlatform (1)
   m_TagString: Pulley Platform
   m_Icon: {fileID: 0}
@@ -2200,7 +2200,7 @@ GameObject:
   - component: {fileID: 1007039054}
   - component: {fileID: 1007039053}
   - component: {fileID: 1007039052}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightPlatform
   m_TagString: Pulley Platform
   m_Icon: {fileID: 0}
@@ -2555,8 +2555,8 @@ MonoBehaviour:
   rightPlatform: {fileID: 551455187}
   leftPulley: {fileID: 1299972956}
   rightPulley: {fileID: 773778524}
-  magnitude: 1.75
-  multiplier: 0.25
+  magnitude: 2
+  multiplier: 0.5
 --- !u!1 &1261352684
 GameObject:
   m_ObjectHideFlags: 0
@@ -3135,7 +3135,7 @@ PrefabInstance:
       objectReference: {fileID: 1318578524}
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: multiplier
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1401728404941618234, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: firstPulley

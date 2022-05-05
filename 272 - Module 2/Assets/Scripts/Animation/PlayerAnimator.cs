@@ -41,8 +41,11 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        if (body.velocity.y < -fallingSpeed) animator.SetBool("Falling", true);
-        else animator.SetBool("Falling", false);
+        if (animator != null)
+        {
+            if (body.velocity.y < -fallingSpeed) animator.SetBool("Falling", true);
+            else animator.SetBool("Falling", false);
+        }
     }
 
     public void SetMovement(float movement)
@@ -51,25 +54,35 @@ public class PlayerAnimator : MonoBehaviour
 
         if (movement != 0)
         {
-            animator.SetBool("Walking", true);
+            if (animator != null)
+                animator.SetBool("Walking", true);
             if (canTurn)
             {
                 if (movement > 0)
                 {
-                    sr.flipX = false;
-                    climbCheck.localPosition = new Vector3(climbCheckX, climbCheck.localPosition.y, 0f);
-                    climbGoal.localPosition = new Vector3(climbGoalX, climbGoal.localPosition.y, 0f);
+                    if (sr != null)
+                        sr.flipX = false;
+                    if (climbCheck != null)
+                        climbCheck.localPosition = new Vector3(climbCheckX, climbCheck.localPosition.y, 0f);
+                    if (climbGoal != null)
+                        climbGoal.localPosition = new Vector3(climbGoalX, climbGoal.localPosition.y, 0f);
                 }
                 else
                 {
-                    sr.flipX = true;
-                    climbCheck.localPosition = new Vector3(-climbCheckX, climbCheck.localPosition.y, 0f);
-                    climbGoal.localPosition = new Vector3(-climbGoalX, climbGoal.localPosition.y, 0f);
-                    climbGoal.localPosition = new Vector3(-climbGoalX, climbGoal.localPosition.y, 0f);
+                    if (sr != null)
+                        sr.flipX = true;
+                    if (climbCheck != null)
+                        climbCheck.localPosition = new Vector3(-climbCheckX, climbCheck.localPosition.y, 0f);
+                    if (climbGoal != null)
+                    {
+                        climbGoal.localPosition = new Vector3(-climbGoalX, climbGoal.localPosition.y, 0f);
+                        climbGoal.localPosition = new Vector3(-climbGoalX, climbGoal.localPosition.y, 0f);
+                    }
                 }
             }
         } else
         {
+            if (animator != null)
             animator.SetBool("Walking", false);
         }
     }
@@ -78,20 +91,14 @@ public class PlayerAnimator : MonoBehaviour
     {
         this.climbing = climbing;
 
-        if (climbCheck.gameObject.GetComponent<LedgeDetection>().GetCanClimb() && this.climbing)
-        {
-            animator.SetBool("Climbing", true);
-            playerMove.SetCanMove(false);
-            canTurn = false;
-        }
-        else animator.SetBool("Climbing", false);
-    }
-
-    public void SetCrouching(bool crouching)
-    {
-        this.crouching = crouching;
-
-        animator.SetBool("Crouching", crouching);
+        if (animator != null)
+            if (climbCheck.gameObject.GetComponent<LedgeDetection>().GetCanClimb() && this.climbing)
+            {
+                animator.SetBool("Climbing", true);
+                playerMove.SetCanMove(false);
+                canTurn = false;
+            }
+            else animator.SetBool("Climbing", false);
     }
 
     public void SetCanTurn(bool canTurn)

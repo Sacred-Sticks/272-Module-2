@@ -8,18 +8,18 @@ public class LivesRemaining : MonoBehaviour
     [SerializeField] private GameObject manager;
 
     private TextMeshProUGUI uiElement;
-    private TimeManager timeManager;
+    private LivesManager livesManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        timeManager = manager.GetComponent<TimeManager>();
+        livesManager = manager.GetComponent<LivesManager>();
         uiElement = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        uiElement.text = "Lives: " + timeManager.GetLives().ToString();
+        uiElement.text = "Lives: " + livesManager.GetLives().ToString();
     }
 }

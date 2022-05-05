@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Crouch",
+                    "name": "Restart",
                     "type": "Button",
                     "id": "9fce7c16-90e7-4de9-b8bd-6b240787928a",
                     "expectedControlType": "Button",
@@ -71,23 +71,12 @@
                 },
                 {
                     "name": "",
-                    "id": "7b325307-5826-43da-8907-3c789b1c12bd",
-                    "path": "<Keyboard>/leftCtrl",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "1ab37d04-6c67-4d91-ae44-79c4eb466eaf",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Crouch",
+                    "action": "Restart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

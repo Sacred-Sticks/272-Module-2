@@ -156,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1401728404941618233, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.56
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: 1401728404941618233, guid: 8dc034913444a28429885b544d6c16f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -655,7 +655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8840429499052277031, guid: f2d1cb808a624074fa32e95b09b93a47, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -30
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 8840429499052277048, guid: f2d1cb808a624074fa32e95b09b93a47, type: 3}
       propertyPath: manager
@@ -1848,7 +1848,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 1}
+  m_Size: {x: 18, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &1973490624
 Transform:
@@ -1858,7 +1858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973490621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5, y: -6.98, z: -0.081309736}
+  m_LocalPosition: {x: 0, y: -6.98, z: -0.081309736}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -8,11 +8,11 @@ public class LevelFail : MonoBehaviour
     [SerializeField] private GameObject manager;
     [SerializeField] private float levelWaitTime;
 
-    private TimeManager timeManager;
+    private LivesManager livesManager;
 
     private void Start()
     {
-        timeManager = manager.GetComponent<TimeManager>();
+        livesManager = manager.GetComponent<LivesManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,6 +23,6 @@ public class LevelFail : MonoBehaviour
 
     private void RespawnPlayer()
     {
-        timeManager.SpawnStatue();
+        livesManager.SpawnStatue();
     }
 }

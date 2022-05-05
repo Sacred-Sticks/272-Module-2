@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerControlsManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class PlayerControlsManager : MonoBehaviour
     [Header("Input Field Names")]
     [SerializeField] private string moveStr;
     [SerializeField] private string climbStr;
-    [SerializeField] private string crouchStr;
+    [SerializeField] private string restartStr;
     [SerializeField] private string waitStr;
     [SerializeField] private string pauseStr;
     [Space]
@@ -21,14 +22,14 @@ public class PlayerControlsManager : MonoBehaviour
 
     private InputAction moveAction;
     private InputAction climbAction;
-    private InputAction crouchAction;
+    private InputAction restartAction;
     private InputAction waitAction;
     private InputAction pauseAction;
 
     private PlayerAnimator animationController;
     private PlayerMove movementController;
     private OpenMenu openMenu;
-    private TimeManager timeManager;
+    private LivesManager livesManager;
 
     private void Awake()
     {
@@ -44,10 +45,10 @@ public class PlayerControlsManager : MonoBehaviour
         //climbAction.canceled += OnClimbUpdate;
         climbAction.Enable();
 
-        crouchAction = actionMap.FindAction(crouchStr);
-        crouchAction.performed += OnCrouchUpdate;
-        crouchAction.canceled += OnCrouchUpdate;
-        crouchAction.Enable();
+        restartAction = actionMap.FindAction(restartStr);
+        restartAction.performed += OnRestartUpdate;
+        restartAction.canceled += OnRestartUpdate;
+        restartAction.Enable();
 
         waitAction = actionMap.FindAction(waitStr);
         waitAction.performed += OnWaitUpdate;
@@ -64,7 +65,7 @@ public class PlayerControlsManager : MonoBehaviour
         animationController = player.GetComponent<PlayerAnimator>();
         movementController = player.GetComponent<PlayerMove>();
         openMenu = GetComponent<OpenMenu>();
-        timeManager = GetComponent<TimeManager>();
+        livesManager = GetComponent<LivesManager>();
     }
 
     private void OnMoveUpdate(InputAction.CallbackContext context)
@@ -84,19 +85,17 @@ public class PlayerControlsManager : MonoBehaviour
         //Debug.Log("Updated Climbing");
     }
 
-    private void OnCrouchUpdate(InputAction.CallbackContext context)
+    private void OnRestartUpdate(InputAction.CallbackContext context)
     {
-        float crouching = context.ReadValue<float>();
-        bool isCrouching = false;
-        if (crouching == 1) isCrouching = true;
-        animationController.SetCrouching(isCrouching);
+        float restart = context.ReadValue<float>();
+        if (restart == 1) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //Debug.Log("Updated Crouching");
     }
 
     private void OnWaitUpdate(InputAction.CallbackContext context)
     {
         float waiting = context.ReadValue<float>();
-        if (waiting == 1) timeManager.ResetTimer();
+        if (waiting == 1) livesManager.ResetTimer();
     }
 
     private void OnPauseUpdate(InputAction.CallbackContext context)

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class LevelFinish : MonoBehaviour
 {
     [SerializeField] private float levelWaitTime;
-    [SerializeField] private int nextScene;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +27,6 @@ public class LevelFinish : MonoBehaviour
 
     private void loadNextScene()
     {
-        SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

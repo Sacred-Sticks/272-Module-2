@@ -10,6 +10,16 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);    
+    }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     private void Start()
     {
         Debug.Log("Started");

@@ -79,7 +79,7 @@ MonoBehaviour:
   actionMapStr: Main Controls
   moveStr: Move
   climbStr: Climb
-  crouchStr: Crouch
+  restartStr: Restart
   waitStr: Wait
   pauseStr: Pause
   player: {fileID: 0}
@@ -113,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7f34a20f693f24f86c9c4cb20dab3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 5
   stoneStatue: {fileID: 575574107481565364, guid: 3e914eae8934cd448a8aaefe18de3011, type: 3}
   player: {fileID: 0}
   numRespawns: 0
@@ -130,7 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelWaitTime: 2
-  nextScene: 1
 --- !u!114 &5650104949360615074
 MonoBehaviour:
   m_ObjectHideFlags: 0
